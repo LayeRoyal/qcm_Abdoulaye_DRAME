@@ -1,0 +1,392 @@
+body{padding: 0; margin: 0; font-family: 'Open-sans';}
+.corp{ 
+   font-family: 'Open Sans',Arial;
+    background-color: rgb(82, 86, 89);
+    }
+
+.container
+{
+padding: 4.8vw 10vw ;
+height: 55vw;
+width: 78vw;
+display: inline-block;
+
+}
+
+.header{
+    width: 100%;
+    height: 12%;
+    background-color: rgb(5, 36, 38);
+    display: flex;
+        }
+
+.header img{
+    
+    width: 5%;
+    height: auto;
+    padding:0 2vw;
+            }
+
+.header h1{
+    width: 90%;
+     color: white;
+      text-align: center;
+      margin: auto;
+      margin-left: -5%;
+       font-size: 2.8vw;
+          }
+
+.mid{
+    background-image: url(Images/img-bg.jpg);
+    background-size: 100%;
+    width: 100%;
+    height: 93%;
+    }
+
+.midform{
+    padding: 10vw 18vw 5vw 18vw;
+    height: 50%;
+        }
+
+.login_form{ font-size: 1vw;
+    background-color: rgb(81, 191, 210);
+    height: 20%;
+    padding: 2% 5%;
+}
+.login_form h2 {float: left; color: white; height: 60%; }
+.login_form h1 {float: right; color: white;   }
+
+.login{height: 75%; width: 90%; background-color: rgb(242, 242, 242); display: inline-block; padding: 5%;}
+.log{
+    width: 100%;
+    background-color: rgb(240, 238, 241);
+    border: 1px solid rgb(155, 155, 155);
+    border-radius: 5px;
+    height: 25%;
+    display: flex;
+    margin-bottom: 5%;
+}
+
+.log input {width: 90%; font-size: 1.3vw; height: 80%;margin: auto; margin-left: 5%; text-decoration: none; border: none; background-color: rgb(240, 238, 241);}
+.log::placeholder{font-family: 'Open Sans'; font-weight: bold; font-size: 1vw;}
+.log img {width: 4%; height: 30%; padding: 5%;}
+.loggedin {width: 100%; height: 22%; display: flex;}
+.loggedin input {background-color: rgb(81, 191, 210); font-size: 1.3vw; cursor: pointer; color: #fff;width: 27%; height: 95%; border-radius: 5px ; border: none;}
+.loggedin p{ margin-left: 10%;color: rgb(155, 155, 155);  font-size: 1.2vw; font-weight: bold;}
+.loggedin p a {text-decoration: none; color: inherit;}
+.loggedin p a:hover{ text-decoration: underline;}
+
+     /* USER*/
+.mid-u{
+    background-image: url(Images/img-bg.jpg);
+    background-size: 100%;
+    width: 100%;
+    height: 93%;
+}
+
+.backmid{
+    width: 82%;
+    height: 100%;
+    margin-left:  9%;
+    background-color: white ;
+    border-radius: 10px;
+    display: flex;
+}
+ 
+ .left{
+    display: block;
+    width: 58%;
+    height: 99%;
+    padding: 0 4%;
+            }
+            
+ .left hr{ width: 106%; margin: 0 0 0 -7%; padding: 0%; position: relative; color: rgb(155, 155, 155);}
+
+ .left .titre {margin: 0; padding: 0; width: 100%; height: 12%;}
+
+ .left .titre h1{font-size: 2vw; height: 25%; opacity: 0.7;}
+ .left .titre p {padding: 0; margin: 0; height: 18%; font-size: 1.3vw; color: rgb(155, 155, 155);}
+
+
+ .left .data{ width: 100%; height: 88%; display: inline-block;}
+
+ .left .data h4 { font-size: 1.2vw; padding: 0; margin: 0; margin-top: 1%;  color: rgb(155, 155, 155);}
+
+ .left .data input {
+    width: 90%;
+    height: 10%;
+    font-size: 2vw;
+    margin-top: 1.3%;
+    background-color: rgba(243, 243, 243, 0.199);
+    color: rgb(126, 126, 126);
+    border: 1px solid rgb(155, 155, 155);
+    box-shadow: 0 0 5px rgb(155, 155, 155);
+    border-radius: 5px ;
+                            }
+ .left .data input:focus{
+    border: 1px solid rgba(81,203,238,1);
+    box-shadow: 0 0 5px rgba(81,203,238,1);
+}
+
+
+ .left .data .avatar{
+height: 8%;
+width: 100%;
+display: flex;
+margin-top: 1%;
+}
+
+ .left .data .avatar p{
+font-size: 1.5vw;
+width: 30%;
+margin: auto;
+margin-left: 0;
+
+}
+ .left .data .avatar #file{display: none;}
+ .left .data .avatar label {
+    margin: auto;  
+    background-color: rgb(81, 191, 210);
+    font-size: 1.6vw; 
+    color: #fff;
+    text-align: center;
+    width: 15vw;
+    padding-top: 5px;
+    height: 70%; 
+    border-radius: 5px ; 
+    border: none;
+    float: right;
+}
+
+ .left .data .conex{
+    background-color: rgb(81, 191, 210);
+    font-size: 1.6vw; 
+    color: #fff;
+    width: 15vw;
+    height: 7.5%; 
+    border-radius: 5px ; 
+    border: none;
+    margin-left: 30%;
+    margin-top: 1%;
+}
+
+ .right{
+    margin: 4% 0%;
+    display: block;
+    width: 30%;
+    height: 50%;
+
+            }
+
+    .right .img{
+    width: 19vw;
+    height: 19vw;
+    border-radius: 50%;
+    border: 0.35vw solid rgb(103, 215, 234);
+    padding-bottom: 0;
+   }
+
+    .right p{ font-size: 1.5vw; text-align: center; margin: 2% 0;}
+
+   .errorsignup
+   {
+    color: red;
+    margin-left: 62%;
+margin-top: -25%;
+font-size: 1.1vw ;
+width: 15vw;
+    text-align: center;
+   }
+   #errorsignin
+   {
+    color: red;
+    margin-left: 42vw;
+    margin-top: -17vw;
+    font-size: 1.3vw;
+    width: 20vw;
+    text-align: center;  
+   }
+
+                /*List qustions*/
+.mid-listq{
+    background-image: url(Images/img-bg.jpg);
+    background-size: 100%;
+    width: 96%;
+    height: 93%;
+    padding: 1% 2%;
+   
+}
+
+.backmidlist{
+    width: 100%;
+    height: 87.5%;
+    background-color: rgb(233, 232, 229);
+    display: flex;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+
+}
+
+.entete_logout
+{
+    height: 12.5%;
+    width: 100%;
+    background-color: rgb(51, 193, 218);
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    display: flex;
+    margin: auto;
+    font-size: 1.3vw;
+}
+.entete_logout h2 {width:72%; text-align: right; color: white; margin-top: 3%; }
+.entete_logout input { font-size: 1.3vw;
+     width:14%; height: 45%;
+      margin-left: 10%;
+       color: white;
+        border-radius: 3px;
+         margin-top:2.5%;
+          border: 0.2px solid rgba(110, 110, 110, 0.548);
+           background-color: rgb(57, 221, 214) ; }
+
+.backmidlist .onglet
+{
+    margin: 5.5% 2% 0% 2%;
+width: 34%;
+height: 67%;
+border-radius: 8px ;
+}
+.backmidlist .onglet .info
+{   height: 40%;
+    border-top-left-radius: 8px ;
+    border-top-right-radius: 8px ;
+    background: rgb(81,191,210);
+    background: linear-gradient(0deg, rgb(103, 215, 234,1) 20%, rgba(166,222,232,1) 73%, rgba(255,255,255,0.3) 96%, rgba(255,255,255,0.5) 100%); 
+    display: flex;
+    font-size: 1.2vw;
+ 
+}
+
+.backmidlist .onglet .info .avatar
+{
+height: 100%;
+width: 55%;
+}
+.backmidlist .onglet .info .avatar img
+{
+    width: 7.5vw;
+    height: 7.5vw;
+    border-radius: 50%;
+    margin: 1vw 1.5vw 2vw 2.5vw ;
+    border: 0.75vw solid rgb(103, 215, 234);
+    box-shadow:  0 0 2px black;
+}
+
+.backmidlist .onglet .info .name{margin-top: 10%;}
+
+.backmidlist .onglet .info .name h3
+{
+    color: white;
+    margin: 2%;
+}
+
+.backmidlist .onglet .lien
+{  
+    background-color: white;
+    height: 60%;
+    width: 100%;
+    border-bottom-left-radius: 8px ;
+    border-bottom-right-radius: 8px ;
+    display: inline-block;
+}
+
+.backmidlist .onglet .lien .list
+{
+    height: 24%;
+    width: 98.5%;
+    margin: 0;
+    border-left: 0.5vw solid white;
+}
+.backmidlist .onglet .lien #activeborder {border-left: 0.5vw solid green;}
+
+.backmidlist .onglet .lien .list:hover
+{
+    background-color: rgb(248, 243, 240);
+}
+
+.backmidlist .onglet .lien .list a
+{
+   cursor: pointer;
+}
+
+.backmidlist .onglet .lien .list h3
+{   float: left;
+    width: 65%;
+    margin: 5% 0 0 5%;
+    font-size: 1.5vw;
+    color: #8c8c8c;
+}
+
+.backmidlist .onglet .lien .list img
+{   
+    margin: 5% 6% ;
+    height: 2vw ;
+    width: 2vw;
+    float: right;
+    
+}
+
+.backmidlist .includeside
+{
+    width: 60%;
+    height: 60%;
+
+}
+
+
+            /*admin inscription*/
+
+.backmid-admin{
+    margin-top: 6%;
+     width: 100%;
+    height: 50%;
+    background-color: white ;
+    border-radius: 10px;
+    display: flex;
+            }
+ .backmid-admin .left .titre h1{font-size: 1.5vw; height: 25%; opacity: 0.7;}
+ .backmid-admin .left .titre p {padding: 0;margin-top: -2%; padding-bottom: 5%; height: 18%; font-size: 1vw; color: rgb(155, 155, 155);}
+
+ .left .admindata input{height: 3vw; font-size: 1.2vw;}
+
+ .left .admindata h4 { font-size: 1vw;}
+.right .imgA{
+    width: 13vw;
+    height: 13vw;
+    border-radius: 50%;
+    border: 0.35vw solid rgb(103, 215, 234);
+    padding-bottom: 0;
+               }
+
+               .left .admindata .avatar label {
+                padding: 4px; 
+                border-radius: 2px ; 
+                font-weight: bold;
+                font-size: 0.9vw; 
+                width: 35%; 
+                margin-right: 10%;
+                
+            }
+            
+             .left .admindata .conex{
+              font-weight: bold;
+                font-size: 0.9vw; 
+                border-radius: 2px;
+                padding: 2%;
+                width:30%; 
+               
+              
+            }
+
+            
+
+        

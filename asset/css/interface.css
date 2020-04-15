@@ -78,7 +78,7 @@ display: inline-block;
 
      /* USER*/
 .mid-u{
-    background-image: url(Images/img-bg.jpg);
+    background-image: url(../Images/img-bg.jpg);
     background-size: 100%;
     width: 100%;
     height: 93%;
@@ -214,7 +214,7 @@ width: 15vw;
 
                 /*List qustions*/
 .mid-listq{
-    background-image: url(Images/img-bg.jpg);
+    background-image: url(../Images/img-bg.jpg);
     background-size: 100%;
     width: 96%;
     height: 93%;

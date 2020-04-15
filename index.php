@@ -38,7 +38,7 @@ session_start();
                 </div>
                 <div class="loggedin">
                 <input name="connexion" type="submit" value="Connexion"/>
-                <p><a href="user.php">S'inscrire pour jouer?</a></p>
+                <p><a href="src/user.php">S'inscrire pour jouer?</a></p>
                 </div>
             </div>
           </div>

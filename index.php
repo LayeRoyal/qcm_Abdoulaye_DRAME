@@ -8,7 +8,7 @@ session_start();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="interface.css">
+    <link rel="stylesheet" type="text/css" href="asset/css/interface.css">
 
     <title>Connexion</title>
 </head>
@@ -17,7 +17,7 @@ session_start();
 <div class="corp">
     <div class="container">
         <div class="header">
-            <img src="Images/logo-QuizzSA.png" />
+            <img src="asset/Images/logo-QuizzSA.png" />
             <h1>Le plaisir de jouer</h1>
         </div>
         <div class="mid">
@@ -30,11 +30,11 @@ session_start();
             <div class="login">
                 <div class="log">
                     <input type="text" name="login" placeholder="Login" value="<?php if(isset($_POST['login'])){echo $_POST['login'];} ?>"/>
-                    <img src="Images/Icônes/ic-login.PNG" alt="login"/>            
+                    <img src="asset/Images/Icônes/ic-login.PNG" alt="login"/>            
                 </div>
                 <div class="log">
                     <input type="password"  name="pass" placeholder="Password"/>
-                    <img src="Images/Icônes/ic-password.PNG" alt="mdp"/>  
+                    <img src="asset/Images/Icônes/ic-password.PNG" alt="mdp"/>  
                 </div>
                 <div class="loggedin">
                 <input name="connexion" type="submit" value="Connexion"/>
@@ -65,7 +65,7 @@ session_start();
          //valeur session login
          $_SESSION['login']=$login;
 
-        $json= json_decode(file_get_contents('Json/admin.json'),true);
+        $json= json_decode(file_get_contents('asset/Json/admin.json'),true);
         //verifions s'il est deja inscrit
         $checklogin=false;
         foreach($json as $key=> $value)
@@ -81,7 +81,7 @@ session_start();
             //verifions le mot de pass admin
             if(($json[$login]["mdp"])==$mdp)
             {
-              header('location: admin.php');
+              header('location: src/admin.php');
             }
             else{
                 echo 'Mot de pass admin incorrect';
@@ -94,7 +94,7 @@ session_start();
         {   
                     $login=$_POST['login'];
                 $mdp=$_POST['pass'];
-                $json= json_decode(file_get_contents('Json/joueur.json'),true);
+                $json= json_decode(file_get_contents('asset/Json/joueur.json'),true);
                 //verifions s'il est deja inscrit
                 $checklogin=false;
                 if( !empty($json))
@@ -113,7 +113,7 @@ session_start();
                     if(($json[$login]["mdp"])==$mdp)
                     {
                        
-                        header('location: play.php');
+                        header('location: src/play.php');
                     }
                     else{
                         echo 'Mot de pass joueur incorrect';

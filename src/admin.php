@@ -3,12 +3,12 @@ session_start();
 
 //Pour acceder admin il faut se connecter
 if(!isset($_SESSION['login']))
-{ header('location: connexion.php');}
+{ header('location: ../index.php');}
 
 // Affichage image et noms
 
 
- $json= json_decode(file_get_contents('Json/admin.json'),true);
+ $json= json_decode(file_get_contents('../asset/Json/admin.json'),true);
  $firstName=$json[$_SESSION['login']]["prenom"];
  $lastName=$json[$_SESSION['login']]["nom"];
  $img= $json[$_SESSION['login']]['image'];
@@ -20,7 +20,7 @@ if(!isset($_SESSION['login']))
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="interface.css">
+    <link rel="stylesheet" type="text/css" href="../asset/css/interface.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>  
     <title>Admin</title>
 </head>
@@ -28,7 +28,7 @@ if(!isset($_SESSION['login']))
 <div class="corp">
     <div class="container">
         <div class="header">
-            <img src="Images/logo-QuizzSA.png" />
+            <img src="../asset/Images/logo-QuizzSA.png" />
             <h1>Le plaisir de jouer</h1>
         </div>
         <div class="mid-listq">
@@ -52,8 +52,8 @@ if(!isset($_SESSION['login']))
                     <div class="list " id="<?php if (!isset($_GET['page'])){echo  'activeborder';}  ?>">
                           <h3>Créer Questions</h3>
                           <img src="<?php if (!isset($_GET['page'])) 
-                                          {echo  'Images\Icônes\ic-ajout-active.PNG';}
-                                          else {echo 'Images\Icônes\ic-ajout.PNG';}     
+                                          {echo  '..\asset\Images\Icônes\ic-ajout-active.PNG';}
+                                          else {echo '..\asset\Images\Icônes\ic-ajout.PNG';}     
                                       ?>"/>
                     </div>
                   </a>
@@ -62,8 +62,8 @@ if(!isset($_SESSION['login']))
                         
                         <h3>Liste Questions</h3>
                           <img src="<?php if (isset($_GET['page']) && $_GET['page']=='listQuestion') 
-                                          {echo  'Images\Icônes\ic-ajout-active.PNG';}
-                                          else {echo 'Images\Icônes\ic-ajout.PNG';}     
+                                          {echo  '..\asset\Images\Icônes\ic-ajout-active.PNG';}
+                                          else {echo '..\asset\Images\Icônes\ic-ajout.PNG';}     
                                       ?>
                                   "/>
                        
@@ -75,8 +75,8 @@ if(!isset($_SESSION['login']))
                      
                         <h3>Créer admin</h3>
                           <img src=" <?php if (isset($_GET['page']) && $_GET['page']=='creerAdmin') 
-                                          {echo  'Images\Icônes\ic-ajout-active.PNG';}
-                                          else {echo 'Images\Icônes\ic-ajout.PNG';}     
+                                          {echo  '..\asset\Images\Icônes\ic-ajout-active.PNG';}
+                                          else {echo '..\asset\Images\Icônes\ic-ajout.PNG';}     
                                       ?>
                                    "/>
                     </div>
@@ -86,8 +86,8 @@ if(!isset($_SESSION['login']))
                         
                         <h3>Liste Joueurs</h3>
                           <img src=" <?php if (isset($_GET['page']) && $_GET['page']=='listJoueur') 
-                                           {echo  'Images\Icônes\ic-ajout-active.PNG';}
-                                           else {echo 'Images\Icônes\ic-ajout.PNG';}
+                                           {echo  '..\asset\Images\Icônes\ic-ajout-active.PNG';}
+                                           else {echo '..\asset\Images\Icônes\ic-ajout.PNG';}
                                      ?>
                                    "/>
                     </div>

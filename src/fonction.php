@@ -24,7 +24,7 @@ function inscription ($jsonfile){
             }
             else   // image uploaded  but let's verify the extention
             {   $typeAccepted= array("jpg","jpeg","png");
-               $imgtype= strtolower(pathinfo('uploads/'.basename($_FILES["file"]["name"]),PATHINFO_EXTENSION));
+               $imgtype= strtolower(pathinfo('../asset/uploads/'.basename($_FILES["file"]["name"]),PATHINFO_EXTENSION));
                if(!in_array($imgtype,$typeAccepted))
                {
                    echo 'Seuls les formats jpg, jpeg et png sont reconnus<br>';
@@ -34,7 +34,7 @@ function inscription ($jsonfile){
                {       
                    //transferer l'image dans uploads
                         $fileTmpName= $_FILES['file']['tmp_name'];
-                        $fileDestination= "uploads/".$login.".".$imgtype;
+                        $fileDestination= "../asset/uploads/".$login.".".$imgtype;
                         move_uploaded_file($fileTmpName,$fileDestination);
                   //maintenant verifions si les mots de passe st identiques
                   
@@ -47,10 +47,10 @@ function inscription ($jsonfile){
                     {
                      $json= json_decode(file_get_contents($jsonfile),true);
                      //eviter redondance de login qui est admin et joueur en meme temps
-                        if($jsonfile=="Json/joueur.json"){
-                        $json2= json_decode(file_get_contents('Json/admin.json'),true);}
+                        if($jsonfile=="../asset/Json/joueur.json"){
+                        $json2= json_decode(file_get_contents('../asset/Json/admin.json'),true);}
                         else{
-                        $json2= json_decode(file_get_contents('Json/joueur.json'),true);}
+                        $json2= json_decode(file_get_contents('../asset/Json/joueur.json'),true);}
 
                      //verifions si le login exist deja
                      $checklogin=false;
@@ -90,7 +90,7 @@ function inscription ($jsonfile){
                         $json= file_put_contents($jsonfile,$json);
                         if($json)
                         {
-                            echo '<h3 style="color:green">Inscription réussie avec succes <a href="connexion.php">clickez ici</a> pour se connecter</h3>';
+                            echo '<h3 style="color:green">Inscription réussie avec succes <a href="../index.php">clickez ici</a> pour se connecter</h3>';
                         }
                         else{
                             echo '<h3>L\'inscription a echoué Veuillez recommencer</h3>';

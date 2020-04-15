@@ -8,7 +8,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="interface.css">
+    <link rel="stylesheet" type="text/css" href="../asset/css/interface.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <title>Admin</title>
 </head>
@@ -45,11 +45,11 @@
                   
                 </div>
              <div class="right">
-                 <img class="imgA" id="img" src="Images/back.png"/>
+                 <img class="imgA" id="img" src="../asset/Images/back.png"/>
                  <p>Avatar Admin</p>
                    <?php if(isset($msg)) echo $msg;?>
              </div>
-             <script type="text/javascript" src="script.js"></script>
+             <script type="text/javascript" src="../asset/javascript/script.js"></script>
             
           </div>
 
@@ -61,7 +61,7 @@
                         <!-- PHP backend -->
 
             <?php
-            inscription("Json/admin.json");
+            inscription("../asset/Json/admin.json");
             ?>
 
 </div>

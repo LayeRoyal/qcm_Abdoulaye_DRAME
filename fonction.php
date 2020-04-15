@@ -47,10 +47,10 @@ function inscription ($jsonfile){
                     {
                      $json= json_decode(file_get_contents($jsonfile),true);
                      //eviter redondance de login qui est admin et joueur en meme temps
-                        if($jsonfile=="joueur.json"){
-                        $json2= json_decode(file_get_contents('admin.json'),true);}
+                        if($jsonfile=="Json/joueur.json"){
+                        $json2= json_decode(file_get_contents('Json/admin.json'),true);}
                         else{
-                        $json2= json_decode(file_get_contents('joueur.json'),true);}
+                        $json2= json_decode(file_get_contents('Json/joueur.json'),true);}
 
                      //verifions si le login exist deja
                      $checklogin=false;
@@ -90,7 +90,7 @@ function inscription ($jsonfile){
                         $json= file_put_contents($jsonfile,$json);
                         if($json)
                         {
-                            echo '<h3 style="color:green">Inscription réussie avec succes <a href="#">clickez ici</a> pour se connecter</h3>';
+                            echo '<h3 style="color:green">Inscription réussie avec succes <a href="connexion.php">clickez ici</a> pour se connecter</h3>';
                         }
                         else{
                             echo '<h3>L\'inscription a echoué Veuillez recommencer</h3>';

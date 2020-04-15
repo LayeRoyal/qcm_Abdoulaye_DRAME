@@ -1,10 +1,27 @@
+<?php
+session_start();
+
+//Pour acceder admin il faut se connecter
+if(!isset($_SESSION['login']))
+{ header('location: connexion.php');}
+
+// Affichage image et noms
+
+
+ $json= json_decode(file_get_contents('Json/admin.json'),true);
+ $firstName=$json[$_SESSION['login']]["prenom"];
+ $lastName=$json[$_SESSION['login']]["nom"];
+ $img= $json[$_SESSION['login']]['image'];
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="interface.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>  
     <title>Admin</title>
 </head>
 <body>
@@ -17,17 +34,17 @@
         <div class="mid-listq">
             <div class="entete_logout">
             <h2>CRÉER ET PARAMÉRTER VOS QUIZZ</h2>
-            <input type="submit" name="logout" value="Déconnexion" />
+            <a href="deconnexion.php"><input type="submit" name="logout" value="Déconnexion" /></a>
             </div>
           <div class="backmidlist">
            <div class="onglet">
                 <div class="info">
                     <div class="avatar">
-                    <img src="Images/backg.PNG"/>
+                    <img src="<?php if(isset($img)){echo $img;} ?>"/>
                     </div>
                     <div class="name">
-                    <h3>Laye</h3>
-                    <h3>DRAME</h3> 
+                    <h3><?php if(isset($firstName)){echo $firstName;} ?></h3>
+                    <h3><?php if(isset($lastName)){echo $lastName;} ?></h3> 
                     </div>
                 </div>
                 <div class="lien">
@@ -93,5 +110,3 @@
 
    </div>
 </div>
-
-

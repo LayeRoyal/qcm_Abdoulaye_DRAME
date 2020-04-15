@@ -61,7 +61,7 @@
                         <!-- PHP backend -->
 
             <?php
-            inscription("admin.json");
+            inscription("Json/admin.json");
             ?>
 
 </div>

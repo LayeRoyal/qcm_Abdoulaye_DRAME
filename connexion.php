@@ -51,6 +51,7 @@ session_start();
                         <!-- PHP TREATMENT -->
 <div id="errorsignin">
  <?php
+
  if( isset($_POST['connexion']))
  {
      if(empty($_POST['login']) || empty($_POST['pass']))
@@ -58,10 +59,13 @@ session_start();
          echo 'Veuillez remplir tous les champs SVP';
      }
      else
-     {
+     {  
          $login=$_POST['login'];
          $mdp=$_POST['pass'];
-        $json= json_decode(file_get_contents('admin.json'),true);
+         //valeur session login
+         $_SESSION['login']=$login;
+
+        $json= json_decode(file_get_contents('Json/admin.json'),true);
         //verifions s'il est deja inscrit
         $checklogin=false;
         foreach($json as $key=> $value)
@@ -90,7 +94,7 @@ session_start();
         {   
                     $login=$_POST['login'];
                 $mdp=$_POST['pass'];
-                $json= json_decode(file_get_contents('joueur.json'),true);
+                $json= json_decode(file_get_contents('Json/joueur.json'),true);
                 //verifions s'il est deja inscrit
                 $checklogin=false;
                 if( !empty($json))

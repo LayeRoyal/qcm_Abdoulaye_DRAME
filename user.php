@@ -61,7 +61,7 @@
 
                         <?php
             include("fonction.php");
-            inscription("joueur.json");
+            inscription("Json/joueur.json");
             ?>
 
 

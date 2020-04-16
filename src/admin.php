@@ -62,8 +62,8 @@ if(!isset($_SESSION['login']))
                         
                         <h3>Liste Questions</h3>
                           <img src="<?php if (isset($_GET['page']) && $_GET['page']=='listQuestion') 
-                                          {echo  '..\asset\Images\Icônes\ic-ajout-active.PNG';}
-                                          else {echo '..\asset\Images\Icônes\ic-ajout.PNG';}     
+                                          {echo  '..\asset\Images\Icônes\ic-liste-active.PNG';}
+                                          else {echo '..\asset\Images\Icônes\ic-liste.PNG';}     
                                       ?>
                                   "/>
                        
@@ -86,8 +86,8 @@ if(!isset($_SESSION['login']))
                         
                         <h3>Liste Joueurs</h3>
                           <img src=" <?php if (isset($_GET['page']) && $_GET['page']=='listJoueur') 
-                                           {echo  '..\asset\Images\Icônes\ic-ajout-active.PNG';}
-                                           else {echo '..\asset\Images\Icônes\ic-ajout.PNG';}
+                                           {echo  '..\asset\Images\Icônes\ic-liste-active.PNG';}
+                                           else {echo '..\asset\Images\Icônes\ic-liste.PNG';}
                                      ?>
                                    "/>
                     </div>

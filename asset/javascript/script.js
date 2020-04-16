@@ -50,9 +50,19 @@ function checkInputs()
 const inputValue=input.value;
     if(inputValue === '') {
 		input.className="error";
-	} else {
-		input.className="success";
 	}
+    else {
+        input.className="success";
+        if(input==confpass && pass.value==confpass.value)
+        {
+            confpass.className="success";
+        }
+        else if(pass.value!=confpass.value){
+            confpass.className="error";
+        }
+		
+    }
+   
 
 }
 }

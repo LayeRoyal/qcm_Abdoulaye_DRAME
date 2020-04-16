@@ -25,15 +25,15 @@
                  <hr>
                  <div class="data  admindata">
                     <h4> Prénom </h4>
-                    <input name="prenom" type="text" value="<?php if(isset($_POST['prenom'])){echo $_POST['prenom'];} ?>" />
+                    <input name="prenom" id="fname" type="text" value="<?php if(isset($_POST['prenom'])){echo $_POST['prenom'];} ?>" />
                     <h4> Nom </h4>
-                    <input name="nom" type="text" value="<?php if(isset($_POST['nom'])){echo $_POST['nom'];} ?>" />
+                    <input name="nom" id="lname" type="text" value="<?php if(isset($_POST['nom'])){echo $_POST['nom'];} ?>" />
                     <h4> Login </h4>
-                    <input name="login" type="text" value="<?php if(isset($_POST['login'])){echo $_POST['login'];} ?>" />
+                    <input name="login" id="login" type="text" value="<?php if(isset($_POST['login'])){echo $_POST['login'];} ?>" />
                     <h4> Password </h4>
-                    <input name="pass" type="password" value="<?php if(isset($_POST['pass'])){echo $_POST['pass'];} ?>"/>
+                    <input name="pass" id="pass" type="password" value="<?php if(isset($_POST['pass'])){echo $_POST['pass'];} ?>"/>
                     <h4> Confirmer Password </h4>
-                    <input name="confpass" type="password" value="<?php if(isset($_POST['confpass'])){echo $_POST['confpass'];} ?>"/>
+                    <input name="confpass" id="confpass" type="password" value="<?php if(isset($_POST['confpass'])){echo $_POST['confpass'];} ?>"/>
                     <div class="avatar">
                     <p>Avatar</p>
                     <input type="file" name="file" id="file" accept="image/*" >

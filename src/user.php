@@ -54,6 +54,8 @@
    </div>
 </form>
 <script src="../asset/javascript/script.js"></script>
+<script src="../asset/Json/admin.json"></script>
+
 </div>
 
 

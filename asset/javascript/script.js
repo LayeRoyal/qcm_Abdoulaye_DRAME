@@ -11,6 +11,10 @@ function readURL(input) {
         }
 
         reader.readAsDataURL(input.files[0]);
+        if((input.files[0].type)!="image/jpeg" && (input.files[0].type)!="image/jpg" && (input.files[0].type)!="image/png")
+        {
+            alert("Veuillez choisir une image au format png,jpg ou jpeg ")
+        }
 
     }
 
@@ -21,8 +25,21 @@ $("#file").change(function(){
     readURL(this);
 
 });
-
-
+ 
+//verifier si le login existe fonction
+function verifier(js, champ)
+{
+$.getJSON(js, function(data) {
+    for(let element in data)
+    {
+        if(element==champ.value)
+        {
+            champ.className="error";
+            
+        }
+    }
+        });
+}
 //javascript form validation
 
 const fname = document.getElementById('fname');
@@ -53,6 +70,14 @@ const inputValue=input.value;
 	}
     else {
         input.className="success";
+        //verifions si le login existe deja
+        if(input==login)
+        {
+            verifier('../asset/Json/admin.json', login);
+            verifier('../asset/Json/joueur.json', login);
+
+        }
+        // verifier si les 2 mdp sont identiques 
         if(input==confpass && pass.value==confpass.value)
         {
             confpass.className="success";
@@ -66,3 +91,6 @@ const inputValue=input.value;
 
 }
 }
+
+//image type verification
+

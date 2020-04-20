@@ -21,6 +21,7 @@ if(!isset($_SESSION['login']))
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="../asset/css/interface.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;1,100;1,300;1,400;1,700&display=swap">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>  
     <title>Admin</title>
 </head>
@@ -50,7 +51,7 @@ if(!isset($_SESSION['login']))
                 <div class="lien">
                   <a href="admin.php">
                     <div class="list " id="<?php if (!isset($_GET['page'])){echo  'activeborder';}  ?>">
-                          <h3>Créer Questions</h3>
+                          <p>Créer Questions</p>
                           <img src="<?php if (!isset($_GET['page'])) 
                                           {echo  '..\asset\Images\Icônes\ic-ajout-active.PNG';}
                                           else {echo '..\asset\Images\Icônes\ic-ajout.PNG';}     
@@ -60,7 +61,7 @@ if(!isset($_SESSION['login']))
                   <a href= "admin.php?page=listQuestion">    
                     <div class="list" id="<?php if (isset($_GET['page']) && $_GET['page']=='listQuestion'){echo  'activeborder';}  ?>">
                         
-                        <h3>Liste Questions</h3>
+                        <p>Liste Questions</p>
                           <img src="<?php if (isset($_GET['page']) && $_GET['page']=='listQuestion') 
                                           {echo  '..\asset\Images\Icônes\ic-liste-active.PNG';}
                                           else {echo '..\asset\Images\Icônes\ic-liste.PNG';}     
@@ -73,7 +74,7 @@ if(!isset($_SESSION['login']))
                   <a href="admin.php?page=creerAdmin">
                     <div class="list" id="<?php if (isset($_GET['page']) && $_GET['page']=='creerAdmin'){echo  'activeborder';}  ?>">
                      
-                        <h3>Créer admin</h3>
+                        <p>Créer admin</p>
                           <img src=" <?php if (isset($_GET['page']) && $_GET['page']=='creerAdmin') 
                                           {echo  '..\asset\Images\Icônes\ic-ajout-active.PNG';}
                                           else {echo '..\asset\Images\Icônes\ic-ajout.PNG';}     
@@ -84,7 +85,7 @@ if(!isset($_SESSION['login']))
                   <a href="admin.php?page=listJoueur">
                     <div class="list" id="<?php if (isset($_GET['page']) && $_GET['page']=='listJoueur'){echo  'activeborder';} ?>">
                         
-                        <h3>Liste Joueurs</h3>
+                        <p>Liste Joueurs</p>
                           <img src=" <?php if (isset($_GET['page']) && $_GET['page']=='listJoueur') 
                                            {echo  '..\asset\Images\Icônes\ic-liste-active.PNG';}
                                            else {echo '..\asset\Images\Icônes\ic-liste.PNG';}

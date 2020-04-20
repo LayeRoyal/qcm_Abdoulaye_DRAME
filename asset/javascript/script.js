@@ -1,20 +1,32 @@
 function readURL(input) {
-
-    if (input.files && input.files[0]) {
-
-        var reader = new FileReader();
-
-        reader.onload = function (e) {
-
-            $('#img').attr('src', e.target.result);
-
-        }
-
-        reader.readAsDataURL(input.files[0]);
-        if((input.files[0].type)!="image/jpeg" && (input.files[0].type)!="image/jpg" && (input.files[0].type)!="image/png")
+    if (input.files && input.files[0]) 
+    {                //image type verification
+          if((input.files[0].type)!="image/jpeg" && (input.files[0].type)!="image/jpg" && (input.files[0].type)!="image/png")
         {
             alert("Veuillez choisir une image au format png,jpg ou jpeg ")
         }
+                 //image size verification
+        else if((input.files[0].size)>2096000)
+        {
+            alert("Taille trop grande \n Veuillez choisir une taille inferieur à 2MB")
+        }
+
+        else
+        {
+             var reader = new FileReader();
+
+            reader.onload = function (e) {
+
+                $('#img').attr('src', e.target.result);
+
+                                        }
+
+       
+        }
+
+        reader.readAsDataURL(input.files[0]);
+       
+      
 
     }
 
@@ -92,5 +104,5 @@ const inputValue=input.value;
 }
 }
 
-//image type verification
-
+//Page creer question
+              

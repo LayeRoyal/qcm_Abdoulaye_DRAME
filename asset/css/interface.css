@@ -1,8 +1,8 @@
-body{padding: 0; margin: 0; font-family: 'Josefin Sans';}
+body{padding: 0; margin: 0; font-family: 'Roboto',"Open Sans",arial;}
 .corp{ 
-   font-family: 'Open Sans',Arial;
+   
     background-color: rgb(82, 86, 89);
-    }
+    } 
 
 .container
 {
@@ -323,7 +323,7 @@ width: 55%;
    cursor: pointer;
 }
 
-.backmidlist .onglet .lien .list h3
+.backmidlist .onglet .lien .list p
 {   float: left;
     width: 65%;
     margin: 5% 0 0 5%;
@@ -333,8 +333,8 @@ width: 55%;
 
 .backmidlist .onglet .lien .list img
 {   
-    margin: 5% 6% ;
-    height: 2vw ;
+    margin: 5% 5% ;
+    height: 1.9vw ;
     width: 2vw;
     float: right;
     
@@ -343,7 +343,7 @@ width: 55%;
 .backmidlist .includeside
 {
     width: 60%;
-    height: 60%;
+    height: 90%;
 
 }
 
@@ -398,7 +398,7 @@ width: 55%;
 {
     margin-top: 1%;
      width: 100%;
-     height: 150%;
+     height: 100%;
     background-color: white ;
     border-radius: 10px;
 }
@@ -438,16 +438,16 @@ width: 55%;
 margin: 0 3% 1% 7% ;
 border: 1px solid #8c8c8c;
 border-radius: 10px/35px  ;
-height: 67.5%;
+height: 68%;
 padding: 1% 2%;
 }
 .containerlq .foot
 {
     width: 100%;
-    height: 10%;
+    height: 8%;
     border-radius:0 0 10px 10px;
     background-color: rgba(241, 176, 143, 0.192);
-    padding-top: 3%;
+    padding-top: 4.2%;
 }
 .containerlq .foot input{
     float: right;
@@ -459,4 +459,153 @@ padding: 1% 2%;
           border: 0.2px solid rgba(110, 110, 110, 0.548);
            background-color: rgb(57, 221, 214) ;
 
+}
+
+
+
+            /* creer question  */
+.containerquestion
+{
+    margin-top: 1%;
+    background-color: white;
+    border-radius: 10px;
+    height: 100%;
+}
+
+
+.containerquestion .headquizz h3{
+    padding-top: 1vw;
+    text-align: center;
+    font-size: 2vw;
+    color: rgb(81, 191, 208);
+}
+
+.containerquestion .creerQuestion {
+    margin:0 3%;
+    margin-top: -2%;
+    width: 95%;
+    height: 85%;
+    border: 2px solid #51bfd0;
+    border-radius: 10px/35px ;
+    display: inline-block;
+}
+.containerquestion .creerQuestion .question
+{
+    display: flex;
+    margin: 0.5% 2%;
+    height: 22%;
+    font-size: 1.3vw;
+}
+
+.containerquestion .creerQuestion .question h3
+{
+    width: 20%;
+  color: rgb(94, 94, 94);
+  margin-top: 7%;
+}
+
+.containerquestion .creerQuestion .question textarea
+{
+    resize: none;
+    width: 80%;
+    font-size: 1.5vw;
+    background-color: rgb(247, 247, 247);
+    border: none;
+    outline: 0;
+    border-bottom: 1.5px solid rgb(103, 215, 234)  ;
+    border-right: 1.5px solid rgb(103, 215, 234);
+}
+.containerquestion .creerQuestion .score
+{
+    display: flex;
+    margin: 0% 2%;
+    height: 15%;
+    font-size: 1.3vw; 
+}
+
+.containerquestion .creerQuestion .score h3
+{
+    width: 30%;
+    color: rgb(94, 94, 94);
+
+}
+.containerquestion .creerQuestion .score input
+{
+width: 15%;
+color: #51bfd0;
+height: 50%;
+margin-top: 3%;
+font-size: 2vw; 
+background-color: rgb(247, 247, 247);
+border: none;
+outline: 0;
+border-bottom: 1.5px solid rgb(103, 215, 234)  ;
+border-right: 1.5px solid rgb(103, 215, 234);
+
+}
+
+input[type=number]::-webkit-inner-spin-button { 
+    -webkit-appearance: none;
+    cursor:pointer;
+    display:block;
+    width:5%;
+    color: #333;
+    text-align:center;
+    position:relative;
+}    
+input[type=number]:hover::-webkit-inner-spin-button { 
+    background:  url('http://i.stack.imgur.com/YYySO.png') no-repeat 50% 50%;  
+    width: 5%;
+    padding: 4px;
+    position: relative;
+    right: 4px;
+    margin-top: 1%;
+    border-radius: 100%;
+}
+
+
+.containerquestion .creerQuestion .score input .typ
+{
+    
+}
+            /*Liste joueur*/
+
+.containerlistj
+{
+    margin-top: 3%;
+    background-color: white;
+    border-radius: 10px;
+    height: 100%;
+    padding: 0.5vw 2vw;
+
+}
+
+.containerlistj .tete
+{
+    text-align: center;
+    font-style: italic;
+    font-size: 1.5vw;
+    color: #8c8c8c;
+    margin: 0;
+    padding: 0;
+}
+.containerlistj .listplayer
+{
+    margin:-2% 5% 1% 5%;
+    width: 90%;
+    height: 80%;
+    border: 1px solid #51bfd0;
+    border-radius: 10px/35px ;
+}
+
+.containerlistj .foot input
+{
+    float: right;
+    margin-right: 5%;
+    font-size: 1.3vw;
+        width:15%; 
+        height: 2.4vw;
+       color: white;
+          border:none;
+           background-color: rgb(57, 221, 214);
 }

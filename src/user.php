@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="../asset/css/interface.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;1,100&display=swap">
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <title>Joueur</title>
 </head>
@@ -64,7 +66,7 @@
 
                         <?php
             include("fonction.php");
-            inscription("Json/joueur.json");
+            inscription("../asset/Json/joueur.json");
             ?>
 
 

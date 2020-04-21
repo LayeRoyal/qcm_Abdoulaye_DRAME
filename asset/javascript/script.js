@@ -105,4 +105,78 @@ const inputValue=input.value;
 }
 
 //Page creer question
-              
+
+
+
+var adding=document.getElementById("plus");
+
+adding.addEventListener("click",addinput);
+
+function addinput() {
+    var choice=document.getElementById("choix");
+    var rep=document.getElementById("rep");
+
+    if( (choice.value=="ChoixMultiple") || (choice.value=="ChoixSimple") )
+    {
+       if(rep.children.length<5)
+       {
+        let div=document.createElement("div");
+        rep.appendChild(div)
+        let i= (rep.children.length);
+        let label=document.createElement("label");
+        let input=document.createElement("input");
+        let  cb=document.createElement("input");
+        let img=document.createElement('img');
+         label.id="lab";
+         label.innerHTML="Réponse "+(i)+" :";
+         input.id="ipt";
+         input.setAttribute("required","");
+         input.name="ipt"+i;
+         cb.className="ckbox";
+         img.setAttribute("src","../asset/Images/Icônes/ic-supprimer.PNG")
+
+         if(choice.value=="ChoixMultiple")
+         {  
+            cb.type="checkbox";
+            cb.name="ckbox"+i;               
+            
+            div.appendChild(label);
+            div.appendChild(input);
+            div.appendChild(cb);
+            div.appendChild(img);
+
+         }
+         else
+         {               
+            cb.type="radio";
+            cb.name="ckbox";
+            
+            div.appendChild(label);
+            div.appendChild(input);
+            div.appendChild(cb);
+            div.appendChild(img);
+
+         }
+        
+         
+
+       }
+           
+    }     
+    else if(choice.value=="ChoixText")
+    {              
+        rep.innerHTML="";
+        let text=document.createElement("TEXTAREA");
+        let label=document.createElement("label");
+        text.name="ctext";
+        text.setAttribute("required","");
+        label.innerHTML="Réponse";
+
+        rep.append(label);
+        rep.append(text);
+       
+    }
+    else{
+        rep.innerHTML="";
+    }
+ }

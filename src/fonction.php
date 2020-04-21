@@ -85,33 +85,30 @@ function inscription ($jsonfile){
                                      echo '<h3>Ce Login existe déjà</h3>';
                                  }
                                  else{
-                                         //upload info for admin
-                                 if($jsonfile=="../asset/Json/joueur.json"){ 
-                                    $json[$login]= ["prenom"=>   $prenom,
-                                                    "nom"   =>   $nom,
-                                                    "login" =>   $login,
-                                                    "mdp"  =>   $pass,
-                                                    "image" =>   $fileDestination,
-                                                    "score"=>   "0"
-                                                    ];
-                                    }
-                                    else            //upload info for admin
-                                    {
+                                         //upload info for admin and user
+                                    
                                         $json[$login]= ["prenom"=>   $prenom,
                                                         "nom"   =>   $nom,
                                                         "login" =>   $login,
                                                         "mdp"  =>   $pass,
                                                         "image" =>   $fileDestination
                                                        ]; 
-                                    }
+                                    
 
                                     $json=json_encode($json);
                                     $json= file_put_contents($jsonfile,$json);
-                                    if($json)
+
+                                   //upload score
+                                   
+                                            $score= json_decode(file_get_contents("../asset/Json/score.json"),true);   
+                                            $score["0"]=  $login;
+                                            $score=json_encode($score);   
+                                            $score=file_put_contents("../asset/Json/score.json",$score);
+
+                                    if($json && $score)
                                     {
                                         echo '<h3 style="color:green">Inscription réussie avec succes <a href="../index.php">clickez ici</a> pour se connecter</h3>';
-                                    
-                                            print_r($_FILES);                      
+                                                         
                                          }
                                     else{
                                         echo '<h3>L\'inscription a echoué Veuillez recommencer</h3>';

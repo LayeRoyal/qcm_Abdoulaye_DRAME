@@ -51,8 +51,8 @@ if(!isset($_SESSION['loginPlayer']) )
                      </div>
                      <div class="tabs">
                              <ul>
-                                <li class="Top activetab" id="topScore" onclick="bestscore()">Top Scores</li>
-                                <li  id="bestScore" onclick="mybest()">Mon Meilleur Score</li>
+                                <li class="activetab" id="topScore" onclick="tab1('topScore','bestScore','bestScores','mybest')">Top Scores</li>
+                                <li  id="bestScore" onclick="tab1('topScore','bestScore','bestScores','mybest')">Mon Meilleur Score</li>
                             </ul>
                             <div id="rightscore">
                                 <div id="bestScores">

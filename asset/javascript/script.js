@@ -204,31 +204,41 @@ function addinput() {
 
 
  //Tabulation score page joueur
-  var top=document.getElementById('topScore');
-  var best=document.getElementById('bestScore');
-  best.addEventListener("click", mybest);
-  function mybest()
+
+  function tab1(option1,option2,container1,container2)
   {  
-    var top=document.getElementById('topScore');  
-    var best=document.getElementById('bestScore');
-    let divTop=document.getElementById('bestScores');
-    let hbest=document.getElementById('mybest');
+      
+ 
+  var best=document.getElementById(option2);
+  best.addEventListener("click", onglet1);
+  var top=document.getElementById(option1);
+  top.addEventListener("click", onglet2);
+
+ 
+function onglet1(){
+    var gauche=document.getElementById(option1);  
+    var droite=document.getElementById(option2);
+    let divTop=document.getElementById(container1);
+    let hbest=document.getElementById(container2);
     divTop.style.visibility="hidden";
     hbest.style.visibility="visible";
-    best.className="activetab";
-    top.className='';
+    droite.className="activetab";
+    gauche.className='';
+}
+  
 
-  }
-  function bestscore()
+  
+  function onglet2()
   {  
-    var top=document.getElementById('topScore');  
-    var best=document.getElementById('bestScore');
-    let divTop=document.getElementById('bestScores');
-    let hbest=document.getElementById('mybest');
+    var gauche=document.getElementById(option1);  
+    var droite=document.getElementById(option2);
+    let divTop=document.getElementById(container1);
+    let hbest=document.getElementById(container2);
     divTop.style.visibility="visible";
     hbest.style.visibility="hidden";
-    best.className="";
-    top.className='activetab';
+    gauche.className="activetab";
+    droite.className='';
 
   }
+}
 

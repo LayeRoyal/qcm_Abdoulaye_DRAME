@@ -63,9 +63,7 @@ session_start();
      {  
          $login=$_POST['login'];
          $mdp=$_POST['pass'];
-         //valeur session login
-         $_SESSION['login']=$login;
-
+        
         $json= json_decode(file_get_contents('asset/Json/admin.json'),true);
         //verifions s'il est deja inscrit
         $checklogin=false;
@@ -82,6 +80,9 @@ session_start();
             //verifions le mot de pass admin
             if(($json[$login]["mdp"])==$mdp)
             {
+                 //valeur session login
+                     $_SESSION['loginAdmin']=$login;
+
               header('location: src/admin.php');
             }
             else{
@@ -113,7 +114,9 @@ session_start();
                     //verifions le mot de pass
                     if(($json[$login]["mdp"])==$mdp)
                     {
-                       
+                        //valeur session login
+                          $_SESSION['loginPlayer']=$login;
+
                         header('location: src/play.php');
                     }
                     else{

@@ -13,26 +13,20 @@ function readURL(input) {
 
         else
         {
-             var reader = new FileReader();
-
-            reader.onload = function (e) {
-
-                $('#img').attr('src', e.target.result);
-
-                                        }
-
+            var output = document.getElementById('img');
+            output.src = URL.createObjectURL(event.target.files[0]);
+            output.onload = function() {
+              URL.revokeObjectURL(output.src) // free memory
+            }
        
         }
-
-        reader.readAsDataURL(input.files[0]);
-       
-      
+     
 
     }
 
 }
-
-$("#file").change(function(){
+var file=document.getElementById('file');
+file.addEventListener("change",function(){
 
     readURL(this);
 
@@ -41,7 +35,10 @@ $("#file").change(function(){
 //verifier si le login existe fonction
 function verifier(js, champ)
 {
-$.getJSON(js, function(data) {
+fetch(js).then(function (reponse)
+{
+    return reponse.json();
+}).then(function(data) {
     for(let element in data)
     {
         if(element==champ.value)
@@ -50,8 +47,10 @@ $.getJSON(js, function(data) {
             
         }
     }
-        });
+        }
+        );
 }
+
 //javascript form validation
 
 const fname = document.getElementById('fname');
@@ -107,6 +106,35 @@ const inputValue=input.value;
 //Page creer question
 
 
+var choice=document.getElementById("choix");
+var rep=document.getElementById("rep");
+choice.addEventListener("change",emptyrep);
+function emptyrep(){
+    
+    var choice=document.getElementById("choix");
+    var rep=document.getElementById("rep");
+   if(choice.value=="ChoixText")
+    {              
+        rep.innerHTML="";
+        let div=document.createElement("div");
+        div.id="textdiv";
+        rep.appendChild(div)
+        let text=document.createElement("TEXTAREA");
+        let label=document.createElement("h3");
+        text.name="ctext";
+        text.id="textrep";
+        label.innerHTML="Réponse";
+        label.id="textlab";
+
+        div.append(label);
+        div.append(text);
+       
+    }
+    else {
+        rep.innerHTML="";
+    }
+       
+}
 
 var adding=document.getElementById("plus");
 
@@ -121,7 +149,10 @@ function addinput() {
        if(rep.children.length<5)
        {
         let div=document.createElement("div");
-        rep.appendChild(div)
+        div.id="multisimple";
+        div.className=(rep.children.length)+1;
+
+        rep.appendChild(div);
         let i= (rep.children.length);
         let label=document.createElement("label");
         let input=document.createElement("input");
@@ -130,53 +161,74 @@ function addinput() {
          label.id="lab";
          label.innerHTML="Réponse "+(i)+" :";
          input.id="ipt";
-         input.setAttribute("required","");
          input.name="ipt"+i;
-         cb.className="ckbox";
-         img.setAttribute("src","../asset/Images/Icônes/ic-supprimer.PNG")
+         cb.id="ckbox";
+         img.setAttribute("src","../asset/Images/Icônes/ic-supprimer.PNG");
+        img.id="imgsup";
+        img.className=i;
+
+        //boutton supprimer
+        img.addEventListener("click", suprep);
+        function suprep()
+        {
+           if(i==div.className)
+           {
+               div.remove();
+           } 
+        }
 
          if(choice.value=="ChoixMultiple")
          {  
             cb.type="checkbox";
             cb.name="ckbox"+i;               
-            
-            div.appendChild(label);
-            div.appendChild(input);
-            div.appendChild(cb);
-            div.appendChild(img);
-
          }
          else
          {               
             cb.type="radio";
             cb.name="ckbox";
-            
+         }
             div.appendChild(label);
             div.appendChild(input);
             div.appendChild(cb);
             div.appendChild(img);
-
-         }
-        
          
 
        }
            
     }     
-    else if(choice.value=="ChoixText")
-    {              
-        rep.innerHTML="";
-        let text=document.createElement("TEXTAREA");
-        let label=document.createElement("label");
-        text.name="ctext";
-        text.setAttribute("required","");
-        label.innerHTML="Réponse";
 
-        rep.append(label);
-        rep.append(text);
-       
-    }
-    else{
+    else if(choice.value==""){
         rep.innerHTML="";
     }
  }
+
+
+ //Tabulation score page joueur
+  var top=document.getElementById('topScore');
+  var best=document.getElementById('bestScore');
+  best.addEventListener("click", mybest);
+  function mybest()
+  {  
+    var top=document.getElementById('topScore');  
+    var best=document.getElementById('bestScore');
+    let divTop=document.getElementById('bestScores');
+    let hbest=document.getElementById('mybest');
+    divTop.style.visibility="hidden";
+    hbest.style.visibility="visible";
+    best.className="activetab";
+    top.className='';
+
+  }
+  function bestscore()
+  {  
+    var top=document.getElementById('topScore');  
+    var best=document.getElementById('bestScore');
+    let divTop=document.getElementById('bestScores');
+    let hbest=document.getElementById('mybest');
+    divTop.style.visibility="visible";
+    hbest.style.visibility="hidden";
+    best.className="";
+    top.className='activetab';
+
+  }
+

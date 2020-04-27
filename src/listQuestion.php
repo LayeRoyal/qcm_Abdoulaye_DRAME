@@ -1,16 +1,96 @@
 
 <div class="containerlq">
-<div class="nbreQ">
-<label >Nbre de Question/Jeu</label>
-<input class="numb" type="texte" />
-<input class="ok" type="submit" value="OK">
-</div>
-<div class="showQuestion">
-dndbhdbhvb<br>
-hjghjgjhvhjv<br>
-<br><br><br><br><br>uhjgjgjhghj<br><br><br>hfhfghfghftf<br>fhgfgfh<br><br>hdbhdhddhdbdh<br><br>udhdjdhjkdhkjdhj
-</div>
-<div class="foot">
-    <input type="submit" value="Suivant">
-</div>
-</div>
+    <div class="nbreQ">
+        <label >Nbre de Question/Jeu</label>
+        <input class="numb" type="texte" />
+        <input class="ok" type="submit" value="OK">
+    </div>
+    <div class="showQuestion">
+        <?php
+        
+        $json= json_decode(file_get_contents('../asset/Json/question.json'),true);
+        $nbrpage=ceil(count($json[$_SESSION['loginAdmin']])/5);
+        $nbrElementParPage=5;
+        if($_GET['list']<1 || !ctype_digit($_GET['list']))
+        {
+            $list=1;
+        }
+        elseif($_GET['list']>$nbrpage)
+        {
+            $list=$nbrpage;
+        }
+        else{
+            $list=$_GET['list'];
+        if(isset($json[$_SESSION['loginAdmin']]))
+        {   
+            $depart=($list-1)*$nbrElementParPage;
+            $arrivee=($list-1)*$nbrElementParPage+$nbrElementParPage;
+            for($i=$depart;$i<$arrivee;$i++)
+            {   
+                if(isset($json[$_SESSION['loginAdmin']][$i]))
+                {
+                     //affichage choix multiple
+                if($json[$_SESSION['loginAdmin']][$i]["choix"]=="ChoixMultiple")
+                {
+                    echo '<h3>'.($i+1).'. '.$json[$_SESSION['loginAdmin']][$i]["questions"].'</h3>';
+        
+                    for($j=1;$j<=5;$j++)
+                    {
+                        if(isset($json[$_SESSION['loginAdmin']][$i]["ipt".$j]))
+                        {   
+                            echo "<input type='checkbox' name=ckbox".$j."/>";
+                            echo $json[$_SESSION['loginAdmin']][$i]["ipt".$j].'<br>';
+                        }
+                        else
+                        {
+                        break;
+                        }
+                    }
+                
+                }
+    
+                //affichage choix simple
+                if($json[$_SESSION['loginAdmin']][$i]["choix"]=="ChoixSimple")
+                {
+                    echo '<h3>'.($i+1).'. '.$json[$_SESSION['loginAdmin']][$i]["questions"].'</h3>'; 
+                    for($j=1;$j<=5;$j++)
+                    {       
+                        if(isset($json[$_SESSION['loginAdmin']][$i]["ipt".$j]))
+                        {   
+                            echo "<input type='radio' name=ckbox/>";
+                            echo $json[$_SESSION['loginAdmin']][$i]["ipt".$j].'<br>';
+                        }
+                        else
+                        {
+                            break;
+                        }
+                    }
+                
+                }
+        
+                    //affichage choix texte
+                    if($json[$_SESSION['loginAdmin']][$i]["choix"]=="ChoixText")
+                    {
+                        echo '<h3>'.($i+1).'. '.$json[$_SESSION['loginAdmin']][$i]["questions"].'</h3>';
+                            echo '<textarea></textarea>';
+            
+                    }
+            
+                }
+             }
+        
+            }
+
+        }    
+        
+               
+            ?>
+            </div>
+        <div class="foot">
+            <?php
+        if($_GET['list']>1){echo "<a href='admin.php?page=listQuestion&list=".($list-1)."'><input id='prec' type='submit' value='Précédent'></a>";}
+
+        if($_GET['list']<$nbrpage){echo "<a href='admin.php?page=listQuestion&list=".($list+1)."'><input id='suiv' type='submit' value='Suivant'></a>";}
+        ?>
+        </div>
+    </div>

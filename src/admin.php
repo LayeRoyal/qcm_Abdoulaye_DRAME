@@ -1,17 +1,18 @@
 <?php
 session_start();
 
+$json= json_decode(file_get_contents('../asset/Json/admin.json'),true);
+
 //Pour acceder admin il faut se connecter
-if(!isset($_SESSION['login']))
+if(!isset($_SESSION['loginAdmin']) )
 { header('location: ../index.php');}
 
 // Affichage image et noms
 
 
- $json= json_decode(file_get_contents('../asset/Json/admin.json'),true);
- $firstName=$json[$_SESSION['login']]["prenom"];
- $lastName=$json[$_SESSION['login']]["nom"];
- $img= $json[$_SESSION['login']]['image'];
+ $firstName=$json[$_SESSION['loginAdmin']]["prenom"];
+ $lastName=$json[$_SESSION['loginAdmin']]["nom"];
+ $img= $json[$_SESSION['loginAdmin']]['image'];
 
 
 ?>
@@ -22,7 +23,6 @@ if(!isset($_SESSION['login']))
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="../asset/css/interface.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;1,100;1,300;1,400;1,700&display=swap">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>  
     <title>Admin</title>
 </head>
 <body>
@@ -49,16 +49,7 @@ if(!isset($_SESSION['login']))
                     </div>
                 </div>
                 <div class="lien">
-                  <a href="admin.php">
-                    <div class="list " id="<?php if (!isset($_GET['page'])){echo  'activeborder';}  ?>">
-                          <p>Créer Questions</p>
-                          <img src="<?php if (!isset($_GET['page'])) 
-                                          {echo  '..\asset\Images\Icônes\ic-ajout-active.PNG';}
-                                          else {echo '..\asset\Images\Icônes\ic-ajout.PNG';}     
-                                      ?>"/>
-                    </div>
-                  </a>
-                  <a href= "admin.php?page=listQuestion">    
+                <a href= "admin.php?page=listQuestion&list=1">    
                     <div class="list" id="<?php if (isset($_GET['page']) && $_GET['page']=='listQuestion'){echo  'activeborder';}  ?>">
                         
                         <p>Liste Questions</p>
@@ -71,7 +62,29 @@ if(!isset($_SESSION['login']))
                    
                     </div>
                   </a>
-                  <a href="admin.php?page=creerAdmin">
+                  <a href="admin.php">
+                    <div class="list " id="<?php if (!isset($_GET['page'])){echo  'activeborder';}  ?>">
+                          <p>Créer Questions</p>
+                          <img src="<?php if (!isset($_GET['page'])) 
+                                          {echo  '..\asset\Images\Icônes\ic-ajout-active.PNG';}
+                                          else {echo '..\asset\Images\Icônes\ic-ajout.PNG';}     
+                                      ?>"/>
+                    </div>
+                  </a>
+                 
+                  <a href="admin.php?page=modifSup">
+                    <div class="list" id="<?php if (isset($_GET['page']) && $_GET['page']=='modifSup'){echo  'activeborder';} ?>">
+                        
+                        <p>Modifier/Supprimer Question</p>
+                          <img src=" <?php if (isset($_GET['page']) && $_GET['page']=='modifSup') 
+                                           {echo  '..\asset\Images\Icônes\ic-liste-active.PNG';}
+                                           else {echo '..\asset\Images\Icônes\ic-liste.PNG';}
+                                     ?>
+                                   "/>
+                    </div>
+                   </a>
+
+                   <a href="admin.php?page=creerAdmin">
                     <div class="list" id="<?php if (isset($_GET['page']) && $_GET['page']=='creerAdmin'){echo  'activeborder';}  ?>">
                      
                         <p>Créer admin</p>
@@ -82,7 +95,8 @@ if(!isset($_SESSION['login']))
                                    "/>
                     </div>
                   </a>
-                  <a href="admin.php?page=listJoueur">
+
+                  <a href="admin.php?page=listJoueur&list=1">
                     <div class="list" id="<?php if (isset($_GET['page']) && $_GET['page']=='listJoueur'){echo  'activeborder';} ?>">
                         
                         <p>Liste Joueurs</p>
@@ -103,6 +117,7 @@ if(!isset($_SESSION['login']))
                   case 'listQuestion': include('listQuestion.php'); break; 
                   case 'creerAdmin': include('CreerAdmin.php'); break;  
                   case 'listJoueur': include('listJoueur.php'); break; 
+                  case'modifSup': include('modifSup.php'); break; 
                   default:   include('CreerQuestion.php');break;
               }
          ?>

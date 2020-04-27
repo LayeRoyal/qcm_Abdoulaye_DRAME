@@ -5,8 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="../asset/css/interface.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;1,100&display=swap">
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <title>Joueur</title>
 </head>
 <body>
@@ -38,7 +36,7 @@
                     <input name="confpass" id="confpass" type="password" value="<?php if(isset($_POST['confpass'])){echo $_POST['confpass'];} ?>"/>
                     <div class="avatar">
                     <p>Avatar</p>
-                    <input type="file" name="file" id="file" accept="image/*" >
+                    <input type="file" name="file" id="file" accept="image/*"  onchange="showMyImage(this)" >
                     <label for="file">Choisir un fichier</label>
                     </div>
                     <button name="create" class="conex">Créer compte</button>
@@ -56,7 +54,6 @@
    </div>
 </form>
 <script src="../asset/javascript/script.js"></script>
-<script src="../asset/Json/admin.json"></script>
 
 </div>
 

@@ -7,7 +7,7 @@
     <title>Document</title>
 </head>
 <body>
-    <script src="../asset/javascript/script.js"></script> 
+   
 <form class="formq" method="post">
 <div class="containerquestion">
     <div class="headquizz">
@@ -24,7 +24,7 @@
             </div>
             <div class="typ">
                <h3>Type de réponse</h3>
-               <select id="choix" name="choix" >
+               <select id="choix" name="choix" onchange="emptyrep()">
                  <option value="">Donnez le type de réponse</option>
                  <option value="ChoixMultiple">Choix Multiple</option>
                  <option value="ChoixSimple">Choix Simple</option>
@@ -43,7 +43,73 @@
 </div>
 
 </form>
+<script src="../asset/javascript/script.js"></script> 
+<div class="messageq">
+<?php
+
+if(isset($_POST['valider']))
+{       
+    array_pop($_POST);
+    $tab=$_POST;
+    $cpt=true;
+    $check=false;
+    if($tab["choix"]=="ChoixMultiple" || $tab["choix"]=="ChoixSimple")
+    {
+        foreach($tab as $key=>$value)
+        {
+            if(empty($value))
+            {
+            $cpt=false;  
+            break;
+            }
+            if($value=="on")
+            {
+                $check=true;
+            }
+        }
+    }
+    else
+    {
+        foreach($tab as $key=>$value)
+        {
+            if(empty($value))
+            {
+               $cpt=false; 
+               $check= false;
+            break;
+            }
+            else
+            {
+                $check=true;
+            }
+        } 
+    }
+
+    if(!$cpt || !$check)
+    {
+        echo "<p style='color:red;'>Information incomplete</p>";
+    }
+    else
+    {
+        $json= json_decode(file_get_contents('../asset/Json/question.json'),true);
+        $json[$_SESSION['login']][]=$tab;
+        $json=json_encode($json);
+        $json= file_put_contents('../asset/Json/question.json',$json);
+
+        if($json)
+        {
+            echo "<p style='color:green;'>Question enregistrée avec succes</p>";   
+             }
+        else{
+            echo '<p>L\'enregistrement a echoué Veuillez recommencer!</p>';
+        }
 
 
+    }
+
+}
+
+?>
+</div>
 </body>
 </html>

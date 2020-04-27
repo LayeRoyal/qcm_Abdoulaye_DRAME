@@ -101,7 +101,7 @@ function inscription ($jsonfile){
                                    //upload score
                                    
                                             $score= json_decode(file_get_contents("../asset/Json/score.json"),true);   
-                                            $score["0"]=  $login;
+                                            $score[$login]=  "0";
                                             $score=json_encode($score);   
                                             $score=file_put_contents("../asset/Json/score.json",$score);
 
@@ -133,5 +133,101 @@ function inscription ($jsonfile){
         }
         echo '</div>';
     }
-            
+
+
+    //foncion paginer
+
+    function paginer()
+    {
+        
+ $score= json_decode(file_get_contents("../asset/Json/score.json"),true);
+ arsort($score);
+ $scoreIndex=[];
+ $scoreValue=[];
+ foreach($score as $key=>$value)
+ {
+     $scoreIndex[]=$key;
+     $scoreValue[]=$value;
+ }
+//  print_r($score);
+$json= json_decode(file_get_contents("../asset/Json/joueur.json"),true);
+
+$nbrElementParPage=15;
+$nbrpage=ceil(count($json)/$nbrElementParPage);
+
+ if($_GET['list']<1 || !ctype_digit($_GET['list']))
+ {
+     $list=1;
+ }
+ elseif($_GET['list']>$nbrpage)
+ {
+    $list=$nbrpage;
+ }
+ else{
+    
+    $list=$_GET["list"];}
+    echo ' <table id="tab" >
+    <tr class="thh">
+        <th>Nom</th>
+        <th>Prenom</th>
+        <th id="scor">Score</th>
+    </tr>';
+
+    if($list<=$nbrpage)
+    {
+        for($i=($list-1)*$nbrElementParPage,$j=($list-1)*$nbrElementParPage;$i<(($list-1)*$nbrElementParPage)+$nbrElementParPage,$j<(($list-1)*$nbrElementParPage)+$nbrElementParPage;$i++,$j++)
+        {  
+            if(isset($scoreIndex[$j]))
+            {               
+                 echo '<tr class="trr"><td>'.$json[$scoreIndex[$j]]["nom"].'</td><td>'. $json[$scoreIndex[$j]]["prenom"].'</td><td id="scor">'.$scoreValue[$i].' pts</td></tr>';
+            }
+            else{break;}
+        }
+    }  
+ 
+   
+   
+
+
+
+
+echo '</table>
+    </div>
+    <div class="foot">';
+     if($_GET['list']>1){echo "<a href='admin.php?page=listJoueur&list=".($list-1)."'><input id='prec' type='submit' value='Précédent'></a>";}
+
+      if($_GET['list']<$nbrpage){echo "<a href='admin.php?page=listJoueur&list=".($list+1)."'><input id='suiv' type='submit' value='Suivant'></a>";}
+
+   echo '</div>';
+    }
+        
+    
+
+
+    //meilleur scores
+
+function topscore ()
+{
+    $score= json_decode(file_get_contents("../asset/Json/score.json"),true);
+    arsort($score);
+    $scoreIndex=[];
+    $scoreValue=[];
+    foreach($score as $key=>$value)
+    {
+        $scoreIndex[]=$key;
+        $scoreValue[]=$value;
+    }
+   //  print_r($score);
+   $json= json_decode(file_get_contents("../asset/Json/joueur.json"),true);
+   for ($i=0; $i < 5; $i++) { 
+       if(isset($json[$scoreIndex[$i]]))
+       {
+       echo "<div class='bestScorer' id='bestScorer'><h4>".$json[$scoreIndex[$i]]["prenom"]."  ".$json[$scoreIndex[$i]]["nom"]."</h4> <p id='para".($i+1)."'>".$scoreValue[$i]." pts</p></div>";
+       }
+    }
+
+}   
+
+
+
 ?>

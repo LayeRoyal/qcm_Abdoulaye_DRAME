@@ -1,6 +1,5 @@
-<script src="../asset/javascript/script.js"></script>  
-
-<div class="tabs divsup">
+<form method="POST" class="formModSup">
+  <div class="tabs divsup">
         <ul class="modsup">
              <li class="activetab" id="modif" onclick="tab1('modif','supp','modify','delete')">Modifier</li>
              <li  id="supp" onclick="tab1('modif','supp','modify','delete')">Supprimer</li>
@@ -18,29 +17,49 @@
                             </div>
                             <div class="typ">
                                 <h3>Type de réponse</h3>
-                                <select id="choix" name="choix" onchange="emptyrep()">
+                                <select id="choix" name="choix" >
                                     <option value="">Donnez le type de réponse</option>
                                     <option value="ChoixMultiple">Choix Multiple</option>
                                     <option value="ChoixSimple">Choix Simple</option>
                                     <option value="ChoixText">Choix Text</option>
                                 </select>
-                                <img id="plus" onclick="addinput()"  src="../asset/Images/Icônes/ic-ajout-réponse.png">
+                                <img id="plus"   src="../asset/Images/Icônes/ic-ajout-réponse.png">
                             </div>
                             <div class="rep" id="rep">
                             
                             </div>
                             <div class="but">
-                            <button name="valider">Modifier</button>
+                            <button name="modify">Modifier</button>
+
                             </div>
+                            
+                            <?php
+                            include("fonction.php");
+                            validQuestion('modify','modifiée')
+                            
+                            ?>
                 </div>        
 
             </div>
             <div id="delete" >
                 <div class="question">
-                    <h3>Questions</h3>
-                    <textarea name="questions" ></textarea>
+                    <h3>Ecrivez la Question à supprimer</h3>
+                    <textarea name="delQ" ></textarea>
                 </div>
-            </div>
+                <div class="delbut">
+                    <button name="delete" id="deletebut"  onclick="tab1('modif','supp','modify','delete')">SUPPRIMER</button>          
+                </div>
+                <?php
+                
+                supprimer();
+                ?>
+                </div>
         </div>
 
-</div>
+  </div>
+  
+
+</form>
+<script src="../asset/javascript/script.js"></script>
+
+

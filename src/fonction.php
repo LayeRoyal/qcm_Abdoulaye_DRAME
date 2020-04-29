@@ -228,6 +228,162 @@ function topscore ()
 
 }   
 
+function validQuestion($button,$case)
+{
+    
+if(isset($_POST[$button]))
+{      
+    if($case=="modifiée")
+    {
+        unset($_POST['delQ']);
+    } 
+    array_pop($_POST);
+    $tab=$_POST;
+    $cpt=true;
+    $check=false;
+    if($tab["choix"]=="ChoixMultiple" || $tab["choix"]=="ChoixSimple")
+    {
+        foreach($tab as $key=>$value)
+        {
+            if(empty($value))
+            {
+            $cpt=false;  
+            break;
+            }
+            if($value=="on")
+            {
+                $check=true;
+            }
+        }
+    }
+    else
+    {
+        foreach($tab as $key=>$value)
+        {
+            if(empty($value))
+            {
+               $cpt=false; 
+               $check= false;
+            break;
+            }
+            else
+            {
+                $check=true;
+            }
+        } 
+    }
+
+    if(!$cpt || !$check)
+    {
+        echo "<p style='color:red;'>Information incomplete</p>";
+    }
+    else
+    {
+        if($case=="enregistrée")
+        {
+                //ajouter
+             $json= json_decode(file_get_contents('../asset/Json/question.json'),true);
+                $json[$_SESSION['loginAdmin']][]=$tab;
+                $json=json_encode($json);
+                $json= file_put_contents('../asset/Json/question.json',$json);
+
+                if($json)
+                {
+                    echo "<p style='color:green;'>Question $case avec succes</p>";   
+                    }
+                else{
+                    echo '<p>L\'enregistrement a echoué Veuillez recommencer!</p>';
+                }
+        }
+        
+        if($case=="modifiée")
+        {
+            //modifier Question
+            
+            $json= json_decode(file_get_contents('../asset/Json/question.json'),true);
+            $checking=false;
+            for($i=0;$i<count($json[$_SESSION['loginAdmin']]);$i++)
+                {
+                    if($json[$_SESSION['loginAdmin']][$i]['questions']==$tab['questions'])
+                    {
+                    $json[$_SESSION['loginAdmin']][$i]=$tab;
+                        $checking=true;
+                        break;
+                    }
+                }
+                if($checking)
+                {
+                    $json=json_encode($json);
+                    $json= file_put_contents('../asset/Json/question.json',$json);
+                    
+                    if($json)
+                    {
+                        echo "<p style='color:green;'>Question modifiée avec succes</p>";   
+                        }
+                    else{
+                        echo "<p style='color:red;'>La modification a echoué Veuillez recommencer!</p>";
+                    }
+                }
+                else
+                {
+                    echo "<p style='color:red;'>Cette question n'existe pas encore</p>";
+                }
+            
+            
+        }
+    }
+     
+      
+    }
+}
+
+
+
+//supprimer question
+
+function supprimer()
+{
+    if(isset($_POST['delete']))
+    {     
+        $delQuestion=$_POST['delQ'];
+        $json= json_decode(file_get_contents('../asset/Json/question.json'),true);
+        $check=false;
+        for($i=0;$i<count($json[$_SESSION['loginAdmin']]);$i++)
+        {
+            if($json[$_SESSION['loginAdmin']][$i]['questions']==$delQuestion)
+            {
+                unset($json[$_SESSION['loginAdmin']][$i]);
+                $check=true;
+                break;
+            }
+        }
+      $json[$_SESSION['loginAdmin']]=array_values($json[$_SESSION['loginAdmin']]);
+        
+        if($check)
+        {
+            $json=json_encode($json);
+            $json= file_put_contents('../asset/Json/question.json',$json);
+            
+            if($json)
+            {
+                echo "<p style='color:green;'>Question supprimée avec succes</p>";   
+                 }
+            else{
+                echo "<p style='color:red;'>La suppression a echoué Veuillez recommencer!</p>";
+            }
+        }
+        else
+        {
+            echo "<p style='color:red;'>Cette question n'existe pas encore</p>";
+        }
+
+        
+
+    }
+  
+}
+
+
 
 
 ?>

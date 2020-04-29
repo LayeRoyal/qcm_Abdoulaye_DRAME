@@ -38,7 +38,13 @@
                     {
                         if(isset($json[$_SESSION['loginAdmin']][$i]["ipt".$j]))
                         {   
-                            echo "<input type='checkbox' name=ckbox".$j."/>";
+                            if(isset($json[$_SESSION['loginAdmin']][$i]["ckbox".$j]) && $json[$_SESSION['loginAdmin']][$i]["ckbox".$j]=="on")
+                            {
+                                echo "<input type='checkbox' name='ckbox".$j."' checked/>";
+                            }
+                            else{
+                                echo "<input type='checkbox' name='ckbox".$j."'/>";
+                            }
                             echo $json[$_SESSION['loginAdmin']][$i]["ipt".$j].'<br>';
                         }
                         else
@@ -52,12 +58,21 @@
                 //affichage choix simple
                 if($json[$_SESSION['loginAdmin']][$i]["choix"]=="ChoixSimple")
                 {
-                    echo '<h3>'.($i+1).'. '.$json[$_SESSION['loginAdmin']][$i]["questions"].'</h3>'; 
+                    echo '<h3>'.($i+1).'. '.$json[$_SESSION['loginAdmin']][$i]["questions"].'</h3>';
+                    while(key($json[$_SESSION['loginAdmin']][$i]) != 'ckbox') {next($json[$_SESSION['loginAdmin']][$i]);}                    $prev_val = prev($json[$_SESSION['loginAdmin']][$i]);
+                    // and to get the key
+                    $prev_key = key($json[$_SESSION['loginAdmin']][$i]);
                     for($j=1;$j<=5;$j++)
                     {       
                         if(isset($json[$_SESSION['loginAdmin']][$i]["ipt".$j]))
                         {   
-                            echo "<input type='radio' name=ckbox/>";
+                            if($prev_key=="ipt".$j)
+                            {   
+                                echo "<input type='radio' name='ckbox".$i."' checked/>";
+                            }
+                            else{
+                                echo "<input type='radio' name='ckbox".$i."'/>";
+                            }
                             echo $json[$_SESSION['loginAdmin']][$i]["ipt".$j].'<br>';
                         }
                         else
@@ -72,7 +87,7 @@
                     if($json[$_SESSION['loginAdmin']][$i]["choix"]=="ChoixText")
                     {
                         echo '<h3>'.($i+1).'. '.$json[$_SESSION['loginAdmin']][$i]["questions"].'</h3>';
-                            echo '<textarea></textarea>';
+                            echo '<textarea readonly>'.$json[$_SESSION['loginAdmin']][$i]['ctext'].'</textarea>';
             
                     }
             

@@ -514,14 +514,14 @@ border: 1px solid black;
 }
 
 
-.containerquestion .headquizz h3{
+ .headquizz h3{
     padding-top: 1vw;
     text-align: center;
     font-size: 2vw;
     color: rgb(81, 191, 208);
 }
 
-.containerquestion .creerQuestion {
+ .creerQuestion {
     margin:0 3%;
     margin-top: -2%;
     width: 95%;
@@ -530,7 +530,7 @@ border: 1px solid black;
     border-radius: 10px/35px ;
     display: inline-block;
 }
-.containerquestion .creerQuestion .question
+ .creerQuestion .question
 {
     display: flex;
     margin: 0.5% 2%;
@@ -538,14 +538,14 @@ border: 1px solid black;
     font-size: 1.3vw;
 }
 
-.containerquestion .creerQuestion .question h3
+ .creerQuestion .question h3, #delete .question h3
 {
     width: 20%;
   color: rgb(94, 94, 94);
   margin-top: 7%;
 }
 
-.containerquestion .creerQuestion .question textarea, #textrep
+ .creerQuestion .question textarea, #textrep,#delete .question textarea
 {
     resize: none;
     width: 80%;
@@ -556,7 +556,7 @@ border: 1px solid black;
     border-bottom: 1.5px solid rgb(103, 215, 234)  ;
     border-right: 1.5px solid rgb(103, 215, 234);
 }
-.containerquestion .creerQuestion .score
+ .creerQuestion .score
 {
     display: flex;
     margin: 0% 2%;
@@ -564,13 +564,13 @@ border: 1px solid black;
     font-size: 1.3vw; 
 }
 
-.containerquestion .creerQuestion .score h3,.containerquestion .creerQuestion .typ h3
+ .creerQuestion .score h3, .creerQuestion .typ h3
 {
     width: 30%;
     color: rgb(94, 94, 94);
 
 }
-.containerquestion .creerQuestion .score input, .containerquestion .creerQuestion  .typ select
+ .creerQuestion .score input,  .creerQuestion  .typ select
 {
 width: 15%;
 color: #51bfd0;
@@ -605,7 +605,7 @@ input[type=number]:hover::-webkit-inner-spin-button {
 }
 
 
-.containerquestion .creerQuestion  .typ
+ .creerQuestion  .typ
 {
    display: flex;
     margin-left: 2% ;
@@ -613,7 +613,7 @@ input[type=number]:hover::-webkit-inner-spin-button {
     font-size: 1.3vw;  
 }
    
-.containerquestion .creerQuestion  .typ select
+ .creerQuestion  .typ select
 {
 width: 58%;
 height: 60%;
@@ -621,19 +621,30 @@ margin-top: 2%;
 font-size: 1.3vw; 
 outline: 0;
 }
-.containerquestion .creerQuestion  .typ select option
+ .creerQuestion  .typ select option
 {
     color: black;
     outline: 0;
 
 }
-.containerquestion .creerQuestion  .typ img
+ .creerQuestion  .typ img
 {    width: 8%;
     height: 60%;
     margin-top: 2%;
     margin-left: 2%;
 }
 
+.but button
+{
+    float: right;
+    margin-right: 2%;
+    font-size: 1.3vw;
+    width:18%; 
+    height: 2.5vw;
+    color: white;
+    border:none;
+    background-color: rgb(57, 221, 214);
+}
 
 #rep
 {
@@ -724,6 +735,10 @@ outline: 0;
     width: 1.4vw;
     height: 2vw;
 }
+ .error{
+    border-color: red;
+    box-shadow: 0 0 10px red;
+}
 
 .messageq p{
     width: 100%;
@@ -731,7 +746,6 @@ outline: 0;
     font-size: 1.5vw;
     margin-top: -0.5vw;
 }
-
 
             /*Liste joueur*/
 
@@ -788,6 +802,10 @@ outline: 0;
 
                     /*Modifier / Supprimer questions*/
 
+.formModSup
+{
+    height: 100%;
+}
 .divsup
 {
     height:100%;
@@ -796,14 +814,36 @@ outline: 0;
   #updateQ
 {
     width: 100%;
-    height: 90%;
+    height: 97%;
     border-bottom-right-radius: 5px;
     border-bottom-left-radius: 5px;
     box-shadow: 0 0 6px 1px rgb(155, 155, 155);
     z-index: 9999;
     position: relative;
     background-color: white;
+    margin-top: 3%;
 }
+
+#modify
+{
+    height: 92%;
+}
+#modify .creerQuestion
+{
+    margin-top: 2%;
+    height: 100%;
+}
+#modify .creerQuestion p
+{
+    margin-top: 0%;
+text-align: center;
+}
+
+#modify .but
+{
+    height: 8%;
+}
+
 .tabs .modsup li
 {
     font-size: 1.8vw;
@@ -817,17 +857,57 @@ outline: 0;
 }
 
 #delete
-{   margin-top: -50%;
+{   margin-top: -80%;
     visibility:hidden;
+    height: 50%;
+    
 }
+#delete p
+{
+    text-align: center;
+}
+#delete .question
+{
+    height: 80%;
+}
+
+#delete .question h3
+{
+    width: 100%;
+    text-align: center;
+}
+
+#delete .question textarea
+{
+    margin-left: 10%;
+    height:60%;
+}
+
+.delbut
+{
+    height: 30%;
+}
+
+.delbut button
+{
+    height: 41%;
+    margin-left: 40%;
+    width: 21%;
+    color: white;
+    background-color: red;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.5vw;
+}
+
+
+
             /* page de jeux */
 .entete_logout_player
 {
     height: 15%;
     color: white;
 }
-
-
 .entete_logout_player  img
 {
     width: 8%;

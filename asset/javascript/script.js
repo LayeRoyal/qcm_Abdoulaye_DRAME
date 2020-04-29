@@ -25,6 +25,38 @@ function readURL(input) {
     }
 
 }
+try{
+    const quest = document.getElementById('quest');
+    const nbrPoint = document.getElementById('point');
+    
+    valider(quest);
+    valider(nbrPoint);
+    
+    //fonction qui verifie si c bon
+    function valider(check){
+        check.addEventListener('keyup', e => {
+            e.preventDefault();
+            
+            checkTexte();
+        });
+        
+        function checkTexte()
+        {  
+        const checkValue=check.value;
+            if(checkValue === '') {
+                check.className="error";
+            }
+            else {
+                check.className="success";
+            }
+        }
+    }
+}
+catch{
+    console.log(EvalError);
+}
+
+try{
 var file=document.getElementById('file');
 file.addEventListener("change",function(){
 
@@ -50,9 +82,16 @@ fetch(js).then(function (reponse)
         }
         );
 }
+}
+catch{
+    console.log(EvalError);
+    
+}
+
 
 //javascript form validation
 
+try{
 const fname = document.getElementById('fname');
 const login = document.getElementById('login');
 const lname = document.getElementById('lname');
@@ -102,10 +141,14 @@ const inputValue=input.value;
 
 }
 }
-
+}
+catch{
+    console.log(EvalError);
+    
+}
 //Page creer question
 
-
+try{
 var choice=document.getElementById("choix");
 var rep=document.getElementById("rep");
 choice.addEventListener("change",emptyrep);
@@ -135,7 +178,14 @@ function emptyrep(){
     }
        
 }
+}
+catch{
+    console.log(EvalError);
+    
+}
 
+
+try{
 var adding=document.getElementById("plus");
 
 adding.addEventListener("click",addinput);
@@ -201,7 +251,11 @@ function addinput() {
         rep.innerHTML="";
     }
  }
-
+}
+catch{
+    console.log(EvalError);
+    
+}
 
  //Tabulation score page joueur
 
@@ -213,8 +267,9 @@ function addinput() {
   best.addEventListener("click", onglet1);
   var top=document.getElementById(option1);
   top.addEventListener("click", onglet2);
+  var supp=document.getElementById("deletebut");
+  supp.addEventListener("click", onglet1);
 
- 
 function onglet1(){
     var gauche=document.getElementById(option1);  
     var droite=document.getElementById(option2);
@@ -241,4 +296,5 @@ function onglet1(){
 
   }
 }
+
 

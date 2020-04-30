@@ -394,6 +394,10 @@ width: 55%;
 
             
 /*list questions */
+.formlq
+{
+    height: 100%;
+}
 .containerlq
 {
     margin-top: 1%;

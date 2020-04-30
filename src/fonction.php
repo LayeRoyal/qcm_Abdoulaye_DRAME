@@ -86,14 +86,25 @@ function inscription ($jsonfile){
                                  }
                                  else{
                                          //upload info for admin and user
-                                    
-                                        $json[$login]= ["prenom"=>   $prenom,
+                                        if($jsonfile=="../asset/Json/joueur.json")
+                                        {
+                                            $json[$login]= ["prenom"=>   $prenom,
                                                         "nom"   =>   $nom,
                                                         "login" =>   $login,
                                                         "mdp"  =>   $pass,
                                                         "image" =>   $fileDestination
-                                                       ]; 
-                                    
+                                                           ];  
+                                        }
+                                        if($jsonfile=="../asset/Json/admin.json")
+                                        {
+                                            $json[$login]= ["prenom"=>   $prenom,
+                                                        "nom"   =>   $nom,
+                                                        "login" =>   $login,
+                                                        "mdp"  =>   $pass,
+                                                        "image" =>   $fileDestination,
+                                                        "QparJeu"=> "5"
+                                                           ];  
+                                        }
 
                                     $json=json_encode($json);
                                     $json= file_put_contents($jsonfile,$json);

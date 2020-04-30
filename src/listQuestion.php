@@ -1,9 +1,26 @@
+ <!--nbre de question par je-->
 
+ <?php
+                    
+             
+                    if(isset($_POST['ok']))
+                    {    $json= json_decode(file_get_contents('../asset/Json/admin.json'),true);
+                        $json[$_SESSION['loginAdmin']]["QparJeu"]=$_POST['numb'] ;
+                        $json= json_encode($json);
+                        $json=file_put_contents('../asset/Json/admin.json',$json);
+                    }
+                    $json= json_decode(file_get_contents('../asset/Json/admin.json'),true);
+                    $question= $json[$_SESSION['loginAdmin']]["QparJeu"];
+        
+       
+        ?>  
+
+<form class="formlq"  method="post">
 <div class="containerlq">
     <div class="nbreQ">
         <label >Nbre de Question/Jeu</label>
-        <input class="numb" type="texte" />
-        <input class="ok" type="submit" value="OK">
+        <input class="numb" name="numb" type="number"  value="<?php if(isset($question)){echo $question;}?>" min="5"/>
+        <input class="ok" name="ok" type="submit" value="OK">
     </div>
     <div class="showQuestion">
         <?php
@@ -109,3 +126,7 @@
         ?>
         </div>
     </div>
+    
+</form>
+
+                   

@@ -16,6 +16,7 @@ if(!isset($_SESSION['loginPlayer']) )
 
 
 ?>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -31,13 +32,13 @@ if(!isset($_SESSION['loginPlayer']) )
 <div class="corp">
     <div class="container">
         <div class="header">
-            <img src="../asset/Images/logo-QuizzSA.png" />
+            <img src="../asset/Images/logo-QuizzSA.png" alt="logo ODC" />
             <h1>Le plaisir de jouer</h1>
         </div>
         <div class="mid-listq">
             <div class="entete_logout entete_logout_player">
             
-            <img src="<?php if(isset($img)){echo $img;} ?>"/>
+            <img src="<?php if(isset($img)){echo $img;} ?>"  alt="my face"/>
           
             <p> <?php if(isset($firstName)){echo $firstName.'   ';} ?><?php if(isset($lastName)){echo $lastName;} ?></p>
 

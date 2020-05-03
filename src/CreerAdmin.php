@@ -45,11 +45,14 @@
                   
                 </div>
              <div class="right">
-                 <img class="imgA" id="img" src="../asset/Images/back.png"/>
+                 <img class="imgA" id="img" src="../asset/Images/back.png" alt="default"/>
                  <p>Avatar Admin</p>
-                   <?php if(isset($msg)) 
+                   <?php if(isset($msg))
+                   {
+                     $msg;
+                   }
                    
-                    $msg;?>
+                    ?>
              </div>
              <script type="text/javascript" src="../asset/javascript/script.js"></script>
             

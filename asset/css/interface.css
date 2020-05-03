@@ -306,7 +306,7 @@ width: 55%;
 
 .backmidlist .onglet .lien .list
 {
-    height: 19%;
+    height: 16%;
     width: 98.2%;
     margin: 0;
     border-left: 0.5vw solid white;
@@ -333,7 +333,7 @@ width: 55%;
 
 .backmidlist .onglet .lien .list img
 {   
-    margin: 5% 4% ;
+    margin: 4% ;
     height: 1.9vw ;
     width: 2vw;
     float: right;
@@ -980,6 +980,7 @@ border: 0.2vw solid white;
     box-shadow: 0 0 6px 1px rgb(155, 155, 155);
     z-index: 9999;
     position: relative;
+    margin-top: -4%;
 }
 
 .tabs ul

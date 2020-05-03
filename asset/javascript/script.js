@@ -258,6 +258,55 @@ catch{
 }
 
  //Tabulation score page joueur
+ var currTab = localStorage.getItem("tab");
+ if(currTab=="delete")
+ {
+     pageSup();
+ }
+ if(currTab=="modify")
+ {
+     pageModif();
+ }
+  var supp=document.getElementById("deletebut");
+  supp.addEventListener("click", activePage2);
+  function activePage2()
+  {
+    var tab="delete";
+    localStorage.setItem("tab", tab);
+  }
+  
+  var modif=document.getElementById("modifier");
+  modif.addEventListener("click", activePage1);
+  function activePage1()
+  {
+    var tab="modify";
+    localStorage.setItem("tab", tab);
+  }
+  
+function pageSup(){
+    var gauche=document.getElementById('modif');  
+    var droite=document.getElementById('supp');
+    let divTop=document.getElementById('modify');
+    let hbest=document.getElementById('delete');
+    divTop.style.visibility="hidden";
+    hbest.style.visibility="visible";
+    droite.className="activetab";
+    gauche.className='';
+
+}
+  
+function pageModif(){
+    var gauche=document.getElementById('modif');  
+    var droite=document.getElementById('supp');
+    let divTop=document.getElementById('modify');
+    let hbest=document.getElementById('delete');
+    divTop.style.visibility="visible";
+    hbest.style.visibility="hidden";
+    droite.className="";
+    gauche.className='activetab';
+
+}
+  
 
   function tab1(option1,option2,container1,container2)
   {  
@@ -267,8 +316,6 @@ catch{
   best.addEventListener("click", onglet1);
   var top=document.getElementById(option1);
   top.addEventListener("click", onglet2);
-  var supp=document.getElementById("deletebut");
-  supp.addEventListener("click", onglet1);
 
 function onglet1(){
     var gauche=document.getElementById(option1);  
@@ -279,6 +326,8 @@ function onglet1(){
     hbest.style.visibility="visible";
     droite.className="activetab";
     gauche.className='';
+     activePage2()
+    
 }
   
 
@@ -293,6 +342,8 @@ function onglet1(){
     hbest.style.visibility="hidden";
     gauche.className="activetab";
     droite.className='';
+    activePage1()
+    
 
   }
 }

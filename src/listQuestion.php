@@ -4,7 +4,7 @@
                     
              
                     if(isset($_POST['ok']))
-                    {    $json= json_decode(file_get_contents('../asset/Json/admin.json'),true);
+                    {   $json= json_decode(file_get_contents('../asset/Json/admin.json'),true);
                         $json[$_SESSION['loginAdmin']]["QparJeu"]=$_POST['numb'] ;
                         $json= json_encode($json);
                         $json=file_put_contents('../asset/Json/admin.json',$json);
@@ -120,9 +120,9 @@
             </div>
         <div class="foot">
             <?php
-        if($_GET['list']>1){echo "<a href='admin.php?page=listQuestion&list=".($list-1)."'><input id='prec' type='submit' value='Précédent'></a>";}
+        if($_GET['list']>1){echo "<a href='admin.php?page=listQuestion&list=".($list-1)."'><input id='prec' type='button' value='Précédent'></a>";}
 
-        if($_GET['list']<$nbrpage){echo "<a href='admin.php?page=listQuestion&list=".($list+1)."'><input id='suiv' type='submit' value='Suivant'></a>";}
+        if($_GET['list']<$nbrpage){echo "<a href='admin.php?page=listQuestion&list=".($list+1)."'><input id='suiv' type='button' value='Suivant'></a>";}
         ?>
         </div>
     </div>

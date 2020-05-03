@@ -49,6 +49,19 @@ if(!isset($_SESSION['loginAdmin']) )
                     </div>
                 </div>
                 <div class="lien">
+                <a href= "admin.php?page=dashboard">    
+                    <div class="list" id="<?php if (isset($_GET['page']) && $_GET['page']=='dashboard'){echo  'activeborder';}  ?>">
+                        
+                        <p>Dash Board</p>
+                          <img style="opacity:0.5;" src="<?php if (isset($_GET['page']) && $_GET['page']=='dashboard') 
+                                          {echo  '..\asset\Images\Icônes\dash2.PNG';}
+                                          else {echo '..\asset\Images\Icônes\dash.PNG';}     
+                                      ?>
+                                  "/>
+                       
+                   
+                    </div>
+                  </a>
                 <a href= "admin.php?page=listQuestion&list=1">    
                     <div class="list" id="<?php if (isset($_GET['page']) && $_GET['page']=='listQuestion'){echo  'activeborder';}  ?>">
                         
@@ -114,6 +127,7 @@ if(!isset($_SESSION['loginAdmin']) )
            <?php
            $pg = isset($_GET['page']) ? $_GET['page'] : '';
               switch($pg) { 
+                  case 'dashboard': include('dashboard.php'); break; 
                   case 'listQuestion': include('listQuestion.php'); break; 
                   case 'creerAdmin': include('CreerAdmin.php'); break;  
                   case 'listJoueur': include('listJoueur.php'); break; 

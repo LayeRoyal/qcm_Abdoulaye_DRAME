@@ -23,13 +23,13 @@
                                     <option value="ChoixSimple">Choix Simple</option>
                                     <option value="ChoixText">Choix Text</option>
                                 </select>
-                                <img id="plus"   src="../asset/Images/Icônes/ic-ajout-réponse.png">
+                                <img id="plus"  alt="plus"  src="../asset/Images/Icônes/ic-ajout-réponse.png">
                             </div>
                             <div class="rep" id="rep">
                             
                             </div>
                             <div class="but">
-                            <button name="modify">Modifier</button>
+                            <button id="modifier" name="modify">Modifier</button>
 
                             </div>
                             
@@ -47,7 +47,7 @@
                     <textarea name="delQ" ></textarea>
                 </div>
                 <div class="delbut">
-                    <button name="delete" id="deletebut"  onclick="tab1('modif','supp','modify','delete')">SUPPRIMER</button>          
+                    <button name="delete" id="deletebut" >SUPPRIMER</button>          
                 </div>
                 <?php
                 
@@ -61,5 +61,6 @@
 
 </form>
 <script src="../asset/javascript/script.js"></script>
+
 
 

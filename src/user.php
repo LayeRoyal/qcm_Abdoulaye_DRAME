@@ -12,7 +12,7 @@
   <form method="post" enctype="multipart/form-data">
     <div class="container">
         <div class="header">
-            <img src="../asset/Images/logo-QuizzSA.png" />
+            <img src="../asset/Images/logo-QuizzSA.png" alt="logo ODC" />
             <h1>Le plaisir de jouer</h1>
         </div>
         <div class="mid-u">
@@ -43,7 +43,7 @@
                     </div>
                 </div>
              <div class="right">
-                 <img class="img" id="img" src="../asset/Images/back.png"/>
+                 <img class="img" id="img" src="../asset/Images/back.png"  alt="default"/>
                  <p>Avatar du joueur</p>
              </div>
             

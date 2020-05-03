@@ -160,7 +160,6 @@ function inscription ($jsonfile){
      $scoreIndex[]=$key;
      $scoreValue[]=$value;
  }
-//  print_r($score);
 $json= json_decode(file_get_contents("../asset/Json/joueur.json"),true);
 
 $nbrElementParPage=15;

@@ -18,7 +18,7 @@ session_start();
 <div class="corp">
     <div class="container">
         <div class="header">
-            <img src="asset/Images/logo-QuizzSA.png" />
+            <img src="asset/Images/logo-QuizzSA.png" alt="logo SA" />
             <h1>Le plaisir de jouer</h1>
         </div>
         <div class="mid">

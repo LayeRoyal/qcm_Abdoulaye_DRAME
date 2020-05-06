@@ -1,1 +1,126 @@
-{"admin":[{"questions":"llala","score":"2","choix":"ChoixMultiple","ipt1":"mmm","ipt2":"dd","ckbox2":"on","ipt3":"qqq"},{"questions":"lalla","score":"2","choix":"ChoixMultiple","ipt1":"trrtrdfdd","ipt2":"ss","ckbox2":"on","ipt3":"ff"}],"ycee123":[{"questions":"maman","score":"5","choix":"ChoixMultiple","ipt1":"oumy","ipt2":"mareme","ckbox2":"on","ipt3":"astou"},{"questions":"Tata","score":"4","choix":"ChoixSimple","ipt1":"mamy","ckbox":"on","ipt2":"tia","ipt3":"binta"},{"questions":"age","score":"2","choix":"ChoixText","ctext":"23ans"},{"questions":"ppp","score":"2","choix":"ChoixSimple","ipt1":"nbnb","ckbox":"on","ipt2":"bvbc"},{"questions":"jhhbjh","score":"2","choix":"ChoixMultiple","ipt1":"hgfh","ipt2":"gfdfd","ckbox2":"on"},{"questions":"jhhbjh","score":"2","choix":"ChoixMultiple","ipt1":"hgfh","ipt2":"gfdfd","ckbox2":"on"},{"questions":"jhhbjh","score":"2","choix":"ChoixMultiple","ipt1":"hgfh","ipt2":"gfdfd","ckbox2":"on"},{"questions":"jhhbjh","score":"2","choix":"ChoixMultiple","ipt1":"hgfh","ipt2":"gfdfd","ckbox2":"on"},{"questions":"jhhbjh","score":"2","choix":"ChoixMultiple","ipt1":"hgfh","ipt2":"gfdfd","ckbox2":"on"},{"questions":"jhhbjh","score":"2","choix":"ChoixMultiple","ipt1":"hgfh","ipt2":"gfdfd","ckbox2":"on"},{"questions":"jhhbjh","score":"2","choix":"ChoixMultiple","ipt1":"hgfh","ipt2":"gfdfd","ckbox2":"on"},{"questions":"jhhbjh","score":"2","choix":"ChoixMultiple","ipt1":"hgfh","ipt2":"gfdfd","ckbox2":"on"},{"questions":"jhhbjh","score":"2","choix":"ChoixMultiple","ipt1":"hgfh","ipt2":"gfdfd","ckbox2":"on"},{"questions":"jhhbjh","score":"2","choix":"ChoixMultiple","ipt1":"hgfh","ipt2":"gfdfd","ckbox2":"on"},{"questions":"couleur prefer\u00e9","score":"3","choix":"ChoixMultiple","ipt1":"bleu","ckbox1":"on","ipt2":"rouge","ipt3":"vert","ipt4":"blanc","ckbox4":"on"},{"questions":"cri","score":"2","choix":"ChoixText","ctext":"skrt"},{"questions":"hhe","score":"2","choix":"ChoixSimple","ipt1":"s,bs","ipt2":"kjjh","ckbox":"on"}]}
+{
+    "admin": [
+        {
+            "questions": "La capitale du S\u00e9n\u00e9gal?",
+            "score": "3",
+            "choix": "ChoixSimple",
+            "ipt1": "New York",
+            "ipt2": "Dakar",
+            "ckbox": "on",
+            "ipt3": "Saint Louis"
+        },
+        {
+            "questions": "Quelles sont les 4 points cardinaux?",
+            "score": "2",
+            "choix": "ChoixMultiple",
+            "ipt1": "Est",
+            "ckbox1": "on",
+            "ipt2": "Ouest",
+            "ckbox2": "on",
+            "ipt3": "Nord",
+            "ckbox3": "on",
+            "ipt4": "Pole",
+            "ipt5": "Sud",
+            "ckbox5": "on"
+        },
+        {
+            "questions": "Que signifie ce mot wolof en francais?\r\n\"xoogne\"",
+            "score": "4",
+            "choix": "ChoixSimple",
+            "ipt1": "fond de marmite",
+            "ipt2": "grattin",
+            "ckbox": "on",
+            "ipt3": "curdent",
+            "ipt4": "carrie"
+        },
+        {
+            "questions": "Definition du cycle SA",
+            "score": "2",
+            "choix": "ChoixText",
+            "ctext": "Sonatel Academy"
+        },
+        {
+            "questions": "Definition de HTML?",
+            "score": "3",
+            "choix": "ChoixText",
+            "ctext": "HyperText Markup Language"
+        },
+        {
+            "questions": "Definition PHP?",
+            "score": "2",
+            "choix": "ChoixText",
+            "ctext": "HyperText PreProcessor"
+        },
+        {
+            "questions": "Nombre d'apprenant \u00e0 la SA?",
+            "score": "4",
+            "choix": "ChoixSimple",
+            "ipt1": "100",
+            "ipt2": "95",
+            "ckbox": "on",
+            "ipt3": "90"
+        },
+        {
+            "questions": "Prof(s) de SA?",
+            "score": "4",
+            "choix": "ChoixMultiple",
+            "ipt1": "Mr Mbaye",
+            "ckbox1": "on",
+            "ipt2": "Mr Wane",
+            "ckbox2": "on",
+            "ipt3": "Mr Seck",
+            "ipt4": "Mr Sall"
+        }
+    ],
+    "ycee123": [
+        {
+            "questions": "maman",
+            "score": "5",
+            "choix": "ChoixMultiple",
+            "ipt1": "oumy",
+            "ipt2": "mareme",
+            "ckbox2": "on",
+            "ipt3": "astou"
+        },
+        {
+            "questions": "Tata",
+            "score": "4",
+            "choix": "ChoixSimple",
+            "ipt1": "mamy",
+            "ckbox": "on",
+            "ipt2": "tia",
+            "ipt3": "binta"
+        },
+        {
+            "questions": "age",
+            "score": "2",
+            "choix": "ChoixText",
+            "ctext": "23ans"
+        },
+        {
+            "questions": "ppp",
+            "score": "2",
+            "choix": "ChoixSimple",
+            "ipt1": "nbnb",
+            "ckbox": "on",
+            "ipt2": "bvbc"
+        },
+        {
+            "questions": "couleur prefer\u00e9",
+            "score": "3",
+            "choix": "ChoixMultiple",
+            "ipt1": "bleu",
+            "ckbox1": "on",
+            "ipt2": "rouge",
+            "ipt3": "vert",
+            "ipt4": "blanc",
+            "ckbox4": "on"
+        },
+        {
+            "questions": "cri",
+            "score": "2",
+            "choix": "ChoixText",
+            "ctext": "skrt"
+        }
+    ]
+}

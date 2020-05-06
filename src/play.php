@@ -14,6 +14,26 @@ if(!isset($_SESSION['loginPlayer']) )
  $lastName=$json[$_SESSION['loginPlayer']]["nom"];
  $img= $json[$_SESSION['loginPlayer']]['image'];
 
+ // traitement
+       
+        if($_GET['question']<1 || !ctype_digit($_GET['question']))
+        {
+            $question=1;
+        }
+        elseif($_GET['question']>$_SESSION['nbrPage'])
+        {
+            $question=$_SESSION['nbrPage'];
+        }
+        else{
+            $question=$_GET['question'];
+        }
+        $json= json_decode(file_get_contents('../asset/Json/question.json'),true);
+        $quest=$json[$_SESSION['admin']][ $_SESSION['randomNumber'][$question-1]]['questions'];
+        $scores=$json[$_SESSION['admin']][ $_SESSION['randomNumber'][$question-1]]['score'];
+        
+
+    
+
 
 ?>
 <!DOCTYPE html>
@@ -48,7 +68,92 @@ if(!isset($_SESSION['loginPlayer']) )
             <div class="backmidlist " id="playback">
                 <div class="centerdiv">
                      <div id="leftq">
+                         <div class="questions">
+                            <h3><u>Question <?php echo $question."/".$_SESSION['nbrPage'];?>:</u></h3>
+                            <h4><?php if(isset($quest)){echo $quest;} ;?></h4>
+                        </div>
+                         <div class="scoreQ">
+                            <h4> <?php if(isset($scores)){echo $scores;}?> pts</h4>
+                         </div>
+                         <div class="ShowQuestion">
+                         <?php
+                            //affichage choix multiple
+                            if($json[$_SESSION['admin']][ $_SESSION['randomNumber'][$question-1]]["choix"]=="ChoixMultiple")
+                            {
+                                                  
+                                for($j=1;$j<=5;$j++)
+                                {
+                                    if(isset($json[$_SESSION['admin']][ $_SESSION['randomNumber'][$question-1]]["ipt".$j]))
+                                    {   
+                                        if(isset($json[$_SESSION['admin']][ $_SESSION['randomNumber'][$question-1]]["ckbox".$j]) && $json[$_SESSION['admin']][ $_SESSION['randomNumber'][$question-1]]["ckbox".$j]=="on")
+                                        {
+                                           $_SESSION['questions']['question'.$question]['ckbox'.$j]="bonne Réponse";
+                                        }
+                                        
+                                        echo "<input type='checkbox' name='ckbox".$j."'/>";
+                                        
+                                        echo $json[$_SESSION['admin']][ $_SESSION['randomNumber'][$question-1]]["ipt".$j].'<br>';
+                                    }
+                                    else
+                                    {
+                                    break;
+                                    }
+                                }
+                            
+                            }
+
+                            //affichage choix simple
+                            if($json[$_SESSION['admin']][ $_SESSION['randomNumber'][$question-1]]["choix"]=="ChoixSimple")
+                            {
+                                while(key($json[$_SESSION['admin']][ $_SESSION['randomNumber'][$question-1]]) != 'ckbox') {next($json[$_SESSION['admin']][ $_SESSION['randomNumber'][$question-1]]);}                    $prev_val = prev($json[$_SESSION['admin']][ $_SESSION['randomNumber'][$question-1]]);
+                                // and to get the key
+                                $prev_key = key($json[$_SESSION['admin']][ $_SESSION['randomNumber'][$question-1]]);
+                                for($j=1;$j<=5;$j++)
+                                {       
+                                    if(isset($json[$_SESSION['admin']][ $_SESSION['randomNumber'][$question-1]]["ipt".$j]))
+                                    {   
+                                        if($prev_key=="ipt".$j)
+                                        {   
+                                            $_SESSION['questions']['question'.$question]['ckbox'.$j]="bonne Réponse";
+                                        }
+                                        
+                                            echo "<input type='radio' name='ckbox".$question."'/>";
+                                        
+                                        echo $json[$_SESSION['admin']][ $_SESSION['randomNumber'][$question-1]]["ipt".$j].'<br>';
+                                    }
+                                    else
+                                    {
+                                        break;
+                                    }
+                                }
+                            
+                            }
                     
+                                //affichage choix texte
+                                if($json[$_SESSION['admin']][ $_SESSION['randomNumber'][$question-1]]["choix"]=="ChoixText")
+                                {
+                                    $_SESSION['questions']['question'.$question]['reponse']=$json[$_SESSION['admin']][ $_SESSION['randomNumber'][$question-1]]["ctext"];
+                                        echo '<textarea name="repText"></textarea>';
+                        
+                                }
+                        
+                            
+                        
+                    
+                        
+        
+                         ?>
+                         </div>
+                         <div class="Page">
+                            <?php
+                                if($_GET['question']>1){echo "<a href='play.php?question=".($question-1)."'><input id='pre' type='submit' value='Précédent'></a>";}
+
+                                if($_GET['question']<$_SESSION['nbrPage']){echo "<a href='play.php?question=".($question+1)."'><input id='nxt' type='submit' value='Suivant'></a>";}
+                                if($_GET['question']==$_SESSION['nbrPage']){echo "<a href='play.php?question=resultat'><input id='done' type='submit' value='Terminer'></a>";}
+                            ?>
+                         </div>
+                        
+
                      </div>
                      <div class="tabs">
                              <ul>

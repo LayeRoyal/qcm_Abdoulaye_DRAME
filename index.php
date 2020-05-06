@@ -1,6 +1,7 @@
 <?php
 
 session_start();
+       
 
 ?>
 <!DOCTYPE html>
@@ -116,8 +117,31 @@ session_start();
                     {
                         //valeur session login
                           $_SESSION['loginPlayer']=$login;
-
-                        header('location: src/play.php');
+                            //traitement pour jouer
+                            if(isset($_SESSION['loginPlayer']))
+                            {    
+                                $json= json_decode(file_get_contents('asset/Json/question.json'),true);
+                                $_SESSION['admin']=array_rand($json);
+                                while(count($json[$_SESSION['admin']])<5)
+                                {
+                                    $_SESSION['admin']=array_rand($json);
+                                }
+                                $json= json_decode(file_get_contents('asset/Json/question.json'),true);
+                                $json2= json_decode(file_get_contents('asset/Json/admin.json'),true); 
+                                $_SESSION['nbrPage']=$json2[$_SESSION['admin']]["QparJeu"];
+                                $_SESSION['randomNumber'] =[];
+                                for ($i=0; $i < $_SESSION['nbrPage']; $i++) { 
+                                    $num=rand(0,$_SESSION['nbrPage']);
+                                        while(in_array($num,$_SESSION['randomNumber']))
+                                        {
+                                            $num=rand(0,$_SESSION['nbrPage']-1);
+                                        }
+                                        $_SESSION['randomNumber'][]=$num;
+                                    
+                                }
+                                
+                            }
+                        header('location: src/play.php?question=1');
                     }
                     else{
                         echo 'Mot de pass joueur incorrect';
@@ -133,6 +157,9 @@ session_start();
      }
  }
 
+
+
+ 
 ?>
 
 </div>

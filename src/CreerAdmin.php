@@ -14,7 +14,7 @@
 </head>
 <body>
 
-  <form method="post" enctype="multipart/form-data">
+  <form class="formAdmin" method="post" enctype="multipart/form-data">
   
           <div class="backmid-admin">
              <div class="left">

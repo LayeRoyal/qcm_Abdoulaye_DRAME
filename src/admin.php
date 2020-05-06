@@ -49,11 +49,11 @@ if(!isset($_SESSION['loginAdmin']) )
                     </div>
                 </div>
                 <div class="lien">
-                <a href= "admin.php?page=dashboard">    
-                    <div class="list" id="<?php if (isset($_GET['page']) && $_GET['page']=='dashboard'){echo  'activeborder';}  ?>">
+                <a href= "admin.php">    
+                    <div class="list" id="<?php if (!isset($_GET['page'])){echo  'activeborder';}  ?>">
                         
                         <p>Dash Board</p>
-                          <img style="opacity:0.5;" src="<?php if (isset($_GET['page']) && $_GET['page']=='dashboard') 
+                          <img style="opacity:0.5;" src="<?php if (!isset($_GET['page'])) 
                                           {echo  '..\asset\Images\Icônes\dash2.PNG';}
                                           else {echo '..\asset\Images\Icônes\dash.PNG';}     
                                       ?>
@@ -75,10 +75,10 @@ if(!isset($_SESSION['loginAdmin']) )
                    
                     </div>
                   </a>
-                  <a href="admin.php">
-                    <div class="list " id="<?php if (!isset($_GET['page'])){echo  'activeborder';}  ?>">
+                  <a href="admin.php?page=CreerQuestion">
+                    <div class="list " id="<?php if (isset($_GET['page'])  && $_GET['page']=='CreerQuestion'){echo  'activeborder';}  ?>">
                           <p>Créer Questions</p>
-                          <img src="<?php if (!isset($_GET['page'])) 
+                          <img src="<?php if (isset($_GET['page'])  && $_GET['page']=='CreerQuestion') 
                                           {echo  '..\asset\Images\Icônes\ic-ajout-active.PNG';}
                                           else {echo '..\asset\Images\Icônes\ic-ajout.PNG';}     
                                       ?>"/>
@@ -127,12 +127,12 @@ if(!isset($_SESSION['loginAdmin']) )
            <?php
            $pg = isset($_GET['page']) ? $_GET['page'] : '';
               switch($pg) { 
-                  case 'dashboard': include('dashboard.php'); break; 
+                  case 'CreerQuestion': include('CreerQuestion.php'); break; 
                   case 'listQuestion': include('listQuestion.php'); break; 
                   case 'creerAdmin': include('CreerAdmin.php'); break;  
                   case 'listJoueur': include('listJoueur.php'); break; 
                   case'modifSup': include('modifSup.php'); break; 
-                  default:   include('CreerQuestion.php');break;
+                  default:   include('dashboard.php');break;
               }
          ?>
            </div>

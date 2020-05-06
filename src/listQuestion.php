@@ -37,7 +37,7 @@
             $list=$nbrpage;
         }
         else{
-            $list=$_GET['list'];
+            $list=$_GET['list'];}
         if(isset($json[$_SESSION['loginAdmin']]))
         {   
             $depart=($list-1)*$nbrElementParPage;
@@ -60,7 +60,7 @@
                                 echo "<input type='checkbox' name='ckbox".$j."' checked/>";
                             }
                             else{
-                                echo "<input type='checkbox' name='ckbox".$j."'/>";
+                                echo "<input type='checkbox' readonly name='ckbox".$j."'/>";
                             }
                             echo $json[$_SESSION['loginAdmin']][$i]["ipt".$j].'<br>';
                         }
@@ -85,10 +85,10 @@
                         {   
                             if($prev_key=="ipt".$j)
                             {   
-                                echo "<input type='radio' name='ckbox".$i."' checked/>";
+                                echo "<input type='radio' readonly name='ckbox".$i."' checked/>";
                             }
                             else{
-                                echo "<input type='radio' name='ckbox".$i."'/>";
+                                echo "<input type='radio' readonly name='ckbox".$i."'/>";
                             }
                             echo $json[$_SESSION['loginAdmin']][$i]["ipt".$j].'<br>';
                         }
@@ -111,7 +111,7 @@
                 }
              }
         
-            }
+            
 
         }    
         

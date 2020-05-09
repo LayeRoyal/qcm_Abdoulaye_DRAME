@@ -1,4 +1,4 @@
-body{padding: 0; margin: 0; font-family: 'Roboto',"Open Sans",arial;}
+body{padding: 0; margin: 0;     font-family: 'Josefin Sans', Arial, sans-serif;}
 .corp{ 
    
     background-color: rgb(82, 86, 89);
@@ -304,6 +304,7 @@ width: 55%;
     border-bottom-left-radius: 8px ;
     border-bottom-right-radius: 8px ;
     display: inline-block;
+    font-family: Arial, sans-serif;
 }
 
 .backmidlist .onglet .lien .list
@@ -463,7 +464,7 @@ height:77%;
 padding: 0% 2%;
 color: rgb(39, 39, 39)
 }
-.showQuestion input[type="checkbox"][checked], .showQuestion input[type="checkbox"][readonly], .showQuestion input[type="radio"][readonly]  {
+.showQuestion input[type="checkbox"][checked], .recap div div, .showQuestion input[type="checkbox"][readonly], .showQuestion input[type="radio"][readonly]  {
     pointer-events: none;
   }
 
@@ -931,6 +932,7 @@ text-align: center;
 {
     height: 15%;
     color: white;
+    font-family: 'Josefin Sans', Arial, sans-serif;
 }
 .entete_logout_player  img
 {
@@ -1037,7 +1039,7 @@ color: #8c8c8c;
 #bestScores
 {
     display: inline-block;
-    font-size: 1.5vw;
+    font-size: 1.3vw;
     width: 100%;
 }
 
@@ -1087,6 +1089,10 @@ margin: 0;
     font-size: 2.5vw;
     height: 40%;
     margin: 15% 15% 10% 15%;
+}
+#leftq  form
+{
+    height: 100%;
 }
 
 #leftq .ShowQuestion input
@@ -1159,14 +1165,15 @@ color: white;
 .bestScorer h4
 {
     margin: 0;
-    width: 60%;
+    width: 64%;
 }
 
 .bestScorer p
 {
     margin: 0;
-    width: 32%;
+    width: 30%;
     font-weight:bold ;
+    text-align: center;
 }
 
 #para1
@@ -1192,4 +1199,115 @@ color: white;
 #para5
 {
     border-bottom: 5px solid rgb(238, 238, 238);
+}
+
+/*partie terminée*/
+.done{
+    padding: 0 1%; 
+}
+.done .score{
+height: 12%;
+text-align: center;
+width: 103%;
+margin-left: -0.7vw;
+border-top-left-radius: 8px 28px;
+border-top-right-radius: 8px 28px;
+background-color: rgb(242, 9, 162);
+padding-top: 2%;
+font-family: 'Josefin Sans',Verdana, Tahoma, Arial, sans-serif;
+margin-bottom: 2%;
+}
+.done .score h2{
+    font-size: 1.8vw;
+    margin: 0;
+    color: #fff;
+}
+.done .recap{
+    height: 83%;
+    width: 75%;
+    padding-left: 25% ;
+    display: inline-block;
+    overflow: auto;
+    }
+
+.recap div h4
+{
+    margin: 0;
+    font-size: 1.5vw;   
+}
+.recap div 
+{
+ height: auto;
+}
+#good
+{
+    color: green;
+}
+#missing
+{
+    color: #c9c908;
+}
+#bad
+{
+    color: red;
+}
+
+.recap div div textarea
+{
+resize: none;
+width: 60%;
+margin: 0;
+border-radius: 5px;
+border: 1px solid black;
+pointer-events: visible;
+outline: 0;
+margin-bottom: 1%;
+}
+.recap div div p
+{
+ margin: auto;
+ margin-left: 5%;
+}
+.recap div span
+{
+    margin: auto;
+    font-size: 1.2vw; 
+    margin-top: 1%;
+}
+.recap div div img
+{ 
+width: 1.5vw;
+float: right;
+height: 1.5vw;
+border-radius: 60%;
+}
+
+.recap div div #badimg
+{
+  
+    margin-top: 3%;
+    margin-left: 35%;
+}
+
+
+
+.recap div div
+{
+    height: auto;
+    font-size: 1.5vw;
+    width: auto;
+  display: flex; 
+}
+
+.tabs div input
+{
+    height: 2.5vw;
+    width: 7vw;
+    color: white;
+    border-radius: 3px;
+    margin: 15% 0 0 35%;
+    font-size: 1.5vw;
+    background-color: rgb(255, 29, 29);
+    border: 1px solid black;
+    outline: 0;
 }

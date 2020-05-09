@@ -139,7 +139,7 @@ session_start();
                                         $_SESSION['randomNumber'][]=$num;
                                     
                                 }
-                                
+                                unset($_SESSION['done']);
                             }
                         header('location: src/play.php?question=1');
                     }

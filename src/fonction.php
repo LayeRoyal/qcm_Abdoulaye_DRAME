@@ -233,6 +233,10 @@ function topscore ()
        if(isset($json[$scoreIndex[$i]]))
        {
        echo "<div class='bestScorer' id='bestScorer'><h4>".$json[$scoreIndex[$i]]["prenom"]."  ".$json[$scoreIndex[$i]]["nom"]."</h4> <p id='para".($i+1)."'>".$scoreValue[$i]." pts</p></div>";
+      
+       }
+       else{
+       break;
        }
     }
 

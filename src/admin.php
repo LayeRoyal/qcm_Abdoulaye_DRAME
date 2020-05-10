@@ -104,7 +104,7 @@ if(!isset($_SESSION['loginAdmin']) )
                         <p>Créer admin</p>
                           <img src=" <?php if (isset($_GET['page']) && $_GET['page']=='creerAdmin') 
                                           {echo  '..\asset\Images\Icones\icajoutactive.png';}
-                                          else {echo '..\asset\Images\Icones\icajout.PNG';}     
+                                          else {echo '..\asset\Images\Icones\icajout.png';}     
                                       ?>
                                    "/>
                     </div>
@@ -115,8 +115,8 @@ if(!isset($_SESSION['loginAdmin']) )
                         
                         <p>Liste Joueurs</p>
                           <img src=" <?php if (isset($_GET['page']) && $_GET['page']=='listJoueur') 
-                                           {echo  '..\asset\Images\Icones\iclisteactive.PNG';}
-                                           else {echo '..\asset\Images\Icones\icliste.PNG';}
+                                           {echo  '..\asset\Images\Icones\iclisteactive.png';}
+                                           else {echo '..\asset\Images\Icones\icliste.png';}
                                      ?>
                                    "/>
                     </div>

@@ -4,7 +4,6 @@ if (isset($_SESSION['done']))
 {
     header("location: resultat.php");
 }
-
 $json= json_decode(file_get_contents('../asset/Json/joueur.json'),true);
 $_SESSION['rejouer']="rejouer";
 //Pour acceder au jeu il faut se connecter

@@ -53,13 +53,16 @@ if(isset($_POST['replay']))
  $firstName=$jsonJ[$_SESSION['loginPlayer']]["prenom"];
  $lastName=$jsonJ[$_SESSION['loginPlayer']]["nom"];
  $img= $jsonJ[$_SESSION['loginPlayer']]['image'];
-// echo'<pre>';
-//         var_dump( $_SESSION);
-//         var_dump( $_SESSION["questions"]);
-//         echo'</pre>';
+
         $myscore=0;
         for ($i=1; $i <=$_SESSION['nbrPage'] ; $i++) { 
-            if( $_SESSION["reponse"]["reponse$i"]== $_SESSION["questions"]["question$i"])
+            if($json[$_SESSION['admin']][$_SESSION['randomNumber'][$i-1]]['choix']=="ChoixText")
+            {
+                if( strcasecmp($_SESSION["reponse"]["reponse$i"], $_SESSION["questions"]["question$i"])==0){
+                    $myscore+=$json[$_SESSION['admin']][ $_SESSION['randomNumber'][$i-1]]['score'];
+                }
+
+            }elseif( $_SESSION["reponse"]["reponse$i"]== $_SESSION["questions"]["question$i"])
             {
                 $myscore+=$json[$_SESSION['admin']][ $_SESSION['randomNumber'][$i-1]]['score'];
             }
@@ -238,7 +241,7 @@ if($myscore>$oldscore)
                                                         {
                                                             if(isset($quest)){echo "<h4>$question. ".$quest."</h4>";}
                                                             $_SESSION['questions']['question'.$question]=$json[$_SESSION['admin']][ $_SESSION['randomNumber'][$question-1]]["ctext"];
-                                                            if( $_SESSION['questions']['question'.$question]== $_SESSION['reponse']['reponse'.$question]) 
+                                                            if(  strcasecmp($_SESSION['questions']['question'.$question], trim($_SESSION['reponse']['reponse'.$question]))==0 )
                                                             {  
                                                                 echo '<div><textarea readonly id="good" >';                                                                
                                                                 echo  $_SESSION["reponse"]["reponse$question"];                                                                

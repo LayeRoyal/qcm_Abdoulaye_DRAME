@@ -30,7 +30,7 @@
                  <option value="ChoixSimple">Choix Simple</option>
                  <option value="ChoixText">Choix Text</option>
                </select>
-               <img id="plus"   src="../asset/Images/Icônes/ic-ajout-réponse.png">
+               <img id="plus"   src="../asset/Images/Icones/icajoutreponse.png">
             </div>
             <div class="rep" id="rep">
               

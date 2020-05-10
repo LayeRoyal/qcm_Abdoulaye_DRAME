@@ -36,9 +36,10 @@ Project is created with:
 To run this project, install it locally using npm:
 
 ```
-$ cd qcm_Abdoulaye_DRAME/qcm_Abdoulaye_DRAME
+$ cd https://github.com/LayeRoyal/qcm_Abdoulaye_DRAME
 $ npm install
 $ npm start
 ```
 
 or go to the website:
+http://senquizzlaye.alwaysdata.net/

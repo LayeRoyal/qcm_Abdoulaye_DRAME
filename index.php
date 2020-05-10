@@ -32,11 +32,11 @@ session_start();
             <div class="login">
                 <div class="log">
                     <input type="text" name="login" placeholder="Login" value="<?php if(isset($_POST['login'])){echo $_POST['login'];} ?>"/>
-                    <img src="asset/Images/Icônes/ic-login.PNG" alt="login"/>            
+                    <img src="asset/Images/Icones/iclogin.PNG" alt="login"/>            
                 </div>
                 <div class="log">
                     <input type="password"  name="pass" placeholder="Password"/>
-                    <img src="asset/Images/Icônes/ic-password.PNG" alt="mdp"/>  
+                    <img src="asset/Images/Icones/icpassword.PNG" alt="mdp"/>  
                 </div>
                 <div class="loggedin">
                 <input name="connexion" type="submit" value="Connexion"/>

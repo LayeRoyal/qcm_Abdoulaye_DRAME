@@ -1,1 +1,44 @@
-{"royal":{"prenom":"Abdoulaye","nom":"DRAME","login":"royal","mdp":"laye","image":"..\/asset\/uploads\/royal.jpg"},"mama":{"prenom":"MAMA","nom":"BA","login":"mama","mdp":"laye","image":"..\/asset\/uploads\/royal.jpg"},"zou":{"prenom":"ASSANE","nom":"NIANG","login":"zou","mdp":"zou","image":"..\/asset\/uploads\/zou.jpg"},"aidy":{"prenom":"Aida","nom":"LEYE","login":"aidy","mdp":"aida","image":"..\/asset\/uploads\/aidy.jpg"},"seck":{"prenom":"SMS","nom":"SECK","login":"seck","mdp":"seck","image":"..\/asset\/uploads\/seck.jpg"},"joueur":{"prenom":"Joueur","nom":"JOUEUR","login":"joueur","mdp":"joueur","image":"..\/asset\/uploads\/joueur.png"}}
+{
+    "royal": {
+        "prenom": "Abdoulaye",
+        "nom": "DRAME",
+        "login": "royal",
+        "mdp": "laye",
+        "image": "..\/asset\/uploads\/royal.jpg"
+    },
+    "mama": {
+        "prenom": "MAMA",
+        "nom": "BA",
+        "login": "mama",
+        "mdp": "laye",
+        "image": "..\/asset\/uploads\/mama.jpg"
+    },
+    "zou": {
+        "prenom": "ASSANE",
+        "nom": "NIANG",
+        "login": "zou",
+        "mdp": "zou",
+        "image": "..\/asset\/uploads\/zou.jpg"
+    },
+    "aidy": {
+        "prenom": "Aida",
+        "nom": "LEYE",
+        "login": "aidy",
+        "mdp": "aida",
+        "image": "..\/asset\/uploads\/aidy.jpg"
+    },
+    "seck": {
+        "prenom": "SMS",
+        "nom": "SECK",
+        "login": "seck",
+        "mdp": "seck",
+        "image": "..\/asset\/uploads\/seck.jpg"
+    },
+    "joueur": {
+        "prenom": "Joueur",
+        "nom": "JOUEUR",
+        "login": "joueur",
+        "mdp": "joueur",
+        "image": "..\/asset\/uploads\/joueur.png"
+    }
+}

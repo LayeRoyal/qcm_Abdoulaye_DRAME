@@ -145,17 +145,17 @@ if($myscore>$oldscore)
                                                                         if($check=="checked"){                                                                   
                                                                             echo "<div><input type='checkbox' name='ckbox".$j."' value='$rep' $check/>";
                                                                             echo '<p id="good">'.$rep.'</p>';
-                                                                            echo "<img src='../asset/Images/Icones/valid.PNG' alt='bon' /></div>";
+                                                                            echo "<img src='../asset/Images/Icones/valid.png' alt='bon' /></div>";
                                                                          }
                                                                         elseif( count($_SESSION["questions"]["question$question"])>1){
                                                                             echo "<div><input type='checkbox' name='ckbox".$question."' value='$rep' $check/>";
                                                                             echo '<p id="missing">'.$rep.'</p>';
-                                                                            echo "<img src='../asset/Images/Icones/missing.PNG' alt='missing' /></div>";
+                                                                            echo "<img src='../asset/Images/Icones/missing.png' alt='missing' /></div>";
                                                                         }
                                                                          else{                                                                   
                                                                             echo "<div><input type='checkbox' name='ckbox".$j."' value='$rep' $check/>";
                                                                             echo '<p id="good">'.$rep.'</p>';
-                                                                            echo "<img src='../asset/Images/Icones/valid.PNG' alt='bon' /></div>";
+                                                                            echo "<img src='../asset/Images/Icones/valid.png' alt='bon' /></div>";
                                                                          }
 }
                                                                   
@@ -163,7 +163,7 @@ if($myscore>$oldscore)
                                                                 {
                                                                     echo "<div><input type='checkbox' name='ckbox".$j."' value='$rep' $check/>";                                                                   
                                                                     echo '<p id="bad">'.$rep.'</p>';
-                                                                    echo "<img src='../asset/Images/Icones/bad.PNG' alt='mauvaise' /></div>";
+                                                                    echo "<img src='../asset/Images/Icones/bad.jpg' alt='mauvaise' /></div>";
                                                                 }
                                                                 else
                                                                 {
@@ -207,7 +207,7 @@ if($myscore>$oldscore)
                                                                 {                                                                   
                                                                     echo "<div><input type='radio' name='ckbox".$question."' value='$rep' $check/>";
                                                                     echo '<p id="good">'.$rep.'</p>';
-                                                                    echo "<img src='../asset/Images/Icones/valid.PNG' alt='bon' /></div>";
+                                                                    echo "<img src='../asset/Images/Icones/valid.png' alt='bon' /></div>";
                                                                     
                                                                 }
                                                                   
@@ -215,7 +215,7 @@ if($myscore>$oldscore)
                                                                 {
                                                                     echo "<div><input type='radio' name='ckbox".$question."' value='$rep' $check/>";                                                                   
                                                                     echo '<p id="bad">'.$rep.'</p>';
-                                                                    echo "<img src='../asset/Images/Icones/bad.PNG' alt='mauvaise' /></div>";
+                                                                    echo "<img src='../asset/Images/Icones/bad.jpg' alt='mauvaise' /></div>";
                                                                 }
                                                                 else
                                                                 {
@@ -243,14 +243,14 @@ if($myscore>$oldscore)
                                                                 echo '<div><textarea readonly id="good" >';                                                                
                                                                 echo  $_SESSION["reponse"]["reponse$question"];                                                                
                                                                 echo '</textarea>';
-                                                                echo "<img src='../asset/Images/Icones/valid.PNG' alt='bon' /></div>";
+                                                                echo "<img src='../asset/Images/Icones/valid.png' alt='bon' /></div>";
                                                             }                                                            
                                                             else
                                                             {
                                                                 echo '<div><textarea readonly id="bad" >';
                                                                 echo  $_SESSION["reponse"]["reponse$question"];
                                                                 echo '</textarea>';
-                                                                echo "<img id='badimg' src='../asset/Images/Icones/bad.PNG' alt='mauvaise' /></div>
+                                                                echo "<img id='badimg' src='../asset/Images/Icones/bad.jpg' alt='mauvaise' /></div>
                                                                 <span>La bonne reponse est: <u>".$_SESSION['questions']['question'.$question]."</u></span>";
                                                             }
                                                 

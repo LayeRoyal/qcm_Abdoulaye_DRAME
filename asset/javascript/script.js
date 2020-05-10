@@ -213,7 +213,7 @@ function addinput() {
          input.id="ipt";
          input.name="ipt"+i;
          cb.id="ckbox";
-         img.setAttribute("src","../asset/Images/Icones/icsupprimer.PNG");
+         img.setAttribute("src","../asset/Images/Icones/icsupprimer.png");
         img.id="imgsup";
         img.className=i;
 

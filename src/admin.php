@@ -55,8 +55,8 @@ if(!isset($_SESSION['loginAdmin']) )
                         
                         <p>Dash Board</p>
                           <img style="opacity:0.5;" src="<?php if (!isset($_GET['page'])) 
-                                          {echo  '..\asset\Images\Icones\dash2.PNG';}
-                                          else {echo '..\asset\Images\Icones\dash.PNG';}     
+                                          {echo  '..\asset\Images\Icones\dash2.png';}
+                                          else {echo '..\asset\Images\Icones\dash.png';}     
                                       ?>
                                   "/>
                        
@@ -68,8 +68,8 @@ if(!isset($_SESSION['loginAdmin']) )
                         
                         <p>Liste Questions</p>
                           <img src="<?php if (isset($_GET['page']) && $_GET['page']=='listQuestion') 
-                                          {echo  '..\asset\Images\Icones\iclisteactive.PNG';}
-                                          else {echo '..\asset\Images\Icones\icliste.PNG';}     
+                                          {echo  '..\asset\Images\Icones\iclisteactive.png';}
+                                          else {echo '..\asset\Images\Icones\icliste.png';}     
                                       ?>
                                   "/>
                        
@@ -80,8 +80,8 @@ if(!isset($_SESSION['loginAdmin']) )
                     <div class="list " id="<?php if (isset($_GET['page'])  && $_GET['page']=='CreerQuestion'){echo  'activeborder';}  ?>">
                           <p>Créer Questions</p>
                           <img src="<?php if (isset($_GET['page'])  && $_GET['page']=='CreerQuestion') 
-                                          {echo  '..\asset\Images\Icones\icajoutactive.PNG';}
-                                          else {echo '..\asset\Images\Icones\icajout.PNG';}     
+                                          {echo  '..\asset\Images\Icones\icajoutactive.png';}
+                                          else {echo '..\asset\Images\Icones\icajout.png';}     
                                       ?>"/>
                     </div>
                   </a>
@@ -91,8 +91,8 @@ if(!isset($_SESSION['loginAdmin']) )
                         
                         <p>Modifier/Supprimer Question</p>
                           <img src=" <?php if (isset($_GET['page']) && $_GET['page']=='modifSup') 
-                                           {echo  '..\asset\Images\Icones\iclisteactive.PNG';}
-                                           else {echo '..\asset\Images\Icones\icliste.PNG';}
+                                           {echo  '..\asset\Images\Icones\iclisteactive.png';}
+                                           else {echo '..\asset\Images\Icones\icliste.png';}
                                      ?>
                                    "/>
                     </div>
@@ -103,7 +103,7 @@ if(!isset($_SESSION['loginAdmin']) )
                      
                         <p>Créer admin</p>
                           <img src=" <?php if (isset($_GET['page']) && $_GET['page']=='creerAdmin') 
-                                          {echo  '..\asset\Images\Icones\icajoutactive.PNG';}
+                                          {echo  '..\asset\Images\Icones\icajoutactive.png';}
                                           else {echo '..\asset\Images\Icones\icajout.PNG';}     
                                       ?>
                                    "/>

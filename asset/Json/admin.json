@@ -1,18 +1,1 @@
-{
-    "admin": {
-        "login": "admin",
-        "prenom": "Abdoulaye",
-        "nom": "DRAME",
-        "mdp": "admin",
-        "image": "..\/asset\/uploads\/LAYE.ROYAL.jpg",
-        "QparJeu": "7"
-    },
-    "ycee123": {
-        "prenom": "Bada",
-        "nom": "Fall",
-        "login": "ycee123",
-        "mdp": "yama",
-        "image": "..\/asset\/uploads\/ycee123.jpg",
-        "QparJeu": "5"
-    }
-}
+{"admin":{"login":"admin","prenom":"Abdoulaye","nom":"DRAME","mdp":"admin","image":"..\/asset\/uploads\/LAYE.ROYAL.jpg","QparJeu":"7"},"ycee123":{"prenom":"Bada","nom":"Fall","login":"ycee123","mdp":"yama","image":"..\/asset\/uploads\/ycee123.jpg","QparJeu":"5"}}

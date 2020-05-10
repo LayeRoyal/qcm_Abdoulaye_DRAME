@@ -131,7 +131,7 @@ session_start();
                                 $_SESSION['nbrPage']=$json2[$_SESSION['admin']]["QparJeu"];
                                 $_SESSION['randomNumber'] =[];
                                 for ($i=0; $i < $_SESSION['nbrPage']; $i++) { 
-                                    $num=rand(0,$_SESSION['nbrPage']);
+                                    $num=rand(0,($_SESSION['nbrPage']-1));
                                         while(in_array($num,$_SESSION['randomNumber']))
                                         {
                                             $num=rand(0,$_SESSION['nbrPage']-1);

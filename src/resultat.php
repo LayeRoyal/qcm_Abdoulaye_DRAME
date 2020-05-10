@@ -280,7 +280,7 @@ if($myscore>$oldscore)
                                 ?>
                             </div>
                         </div>
-                        <form method="post"><div><input name="replay" type="submit" value="Rejouer" /></div></form>
+                        <form method="post"><div><input id="replay" name="replay" type="submit" value="Rejouer" /></div></form>
                     </div>
                   </div>
                  </div>
